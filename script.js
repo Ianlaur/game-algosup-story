@@ -1,7 +1,7 @@
 
 window.onload = function() {
     var inventory = []; // Declare and initialize the inventory array
-
+    
     document.getElementById('run').addEventListener('click', function() {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>Where will you run?</h1>';
@@ -34,7 +34,7 @@ window.onload = function() {
                             takeAnythingElseButton.addEventListener('click', function() {
                                 document.body.innerHTML = ''; // Clear the screen
                                 document.body.innerHTML += '<h2>What else will you take?</h2>';
-                                
+
                                 var additionalChoices = ['water', 'flashlight', 'rope', ' Raw meat'];
                                 additionalChoices.forEach(function(additionalChoice) {
                                     var additionalButton = document.createElement('button');
@@ -46,8 +46,9 @@ window.onload = function() {
                                     });
                                     document.body.appendChild(additionalButton);
                                 });
-                            });
 
+                                document.body.appendChild(goBackButton);
+                            });
                             document.body.appendChild(takeAnythingElseButton);
                         });
                         document.body.appendChild(groceryButton);
@@ -83,17 +84,33 @@ window.onload = function() {
                                     });
                                     document.body.appendChild(additionalButton);
                                 });
-                            });
 
+                                // Add a "Go Back" button to return to the choice of where to run
+                                var goBackButton = document.createElement('button');
+                                goBackButton.innerHTML = 'Go Back';
+                                goBackButton.addEventListener('click', function() {
+                                    document.body.innerHTML = ''; // Clear the screen
+                                    document.body.innerHTML += '<h1>Where will you run?</h1>';
+                                    choices.forEach(function(choice) {
+                                        var button = document.createElement('button');
+                                        button.innerHTML = choice;
+                                        button.addEventListener('click', function() {
+                                            // Handle the choice of where to run
+                                        });
+                                        document.body.appendChild(button);
+                                    });
+                                });
+
+                                document.body.appendChild(goBackButton);
+                            });
                             document.body.appendChild(takeAnythingElseButton);
                         });
                         document.body.appendChild(weaponButton);
                     });
                 }
-                // what to take drug store
                 if (choice === 'drug store') {
                     document.body.innerHTML += '<h2>What will you take?</h2>';
-                    var drugChoices = ['painkillers', 'antibiotics', 'cough syrup', 'bandages'];
+                    var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                     drugChoices.forEach(function(drugChoice) {
                         var drugButton = document.createElement('button');
                         drugButton.innerHTML = drugChoice;
@@ -101,11 +118,57 @@ window.onload = function() {
                             inventory.push(drugChoice); // Add the chosen item to the inventory
                             document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+
+                            // Ask if the player wants to take anything else in the drug store
+                            var takeAnythingElseButton = document.createElement('button');
+                            takeAnythingElseButton.innerHTML = 'Take anything else?';
+                            takeAnythingElseButton.addEventListener('click', function() {
+                                document.body.innerHTML = ''; // Clear the screen
+                                document.body.innerHTML += '<h2>What else will you take?</h2>';
+
+                                var additionalChoices = ['medkit', 'vitamins', 'prescription drugs'];
+                                additionalChoices.forEach(function(additionalChoice) {
+                                    var additionalButton = document.createElement('button');
+                                    additionalButton.innerHTML = additionalChoice;
+                                    additionalButton.addEventListener('click', function() {
+                                        inventory.push(additionalChoice); // Add the chosen item to the inventory
+                                        document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                        
+                                    });
+                                    document.body.appendChild(additionalButton);
+                                    
+                                });
+                                
+
+                        document.body.appendChild(goSomewhereElseButton);
+
+                                // Add a "Go Back" button to return to the choice of where to run
+                                var goBackButton = document.createElement('button');
+                                goBackButton.innerHTML = 'Go Back';
+                                goBackButton.addEventListener('click', function() {
+                                    document.body.innerHTML = ''; // Clear the screen
+                                    document.body.innerHTML += '<h1>Where will you run?</h1>';
+                                    choices.forEach(function(choice) {
+                                        var button = document.createElement('button');
+                                        button.innerHTML = choice;
+                                        button.addEventListener('click', function() {
+                                            // Handle the choice of where to run
+                                        });
+                                        document.body.appendChild(button);
+                                    });
+                                });
+
+                                document.body.appendChild(goBackButton);
+                            });
+                            document.body.appendChild(takeAnythingElseButton);
                         });
                         document.body.appendChild(drugButton);
+                        
                     });
+                    
                 }
-                // what happens if you choose the white house
+                
                 if (choice === 'the white house') {
                     document.body.innerHTML += '<p>You chose to go to the White House...</p>';
                     setTimeout(function() {
@@ -114,11 +177,16 @@ window.onload = function() {
                 }
             });
             document.body.appendChild(button);
+            
+            
+            
+    
         });
-    });
 
-    document.getElementById('find').addEventListener('click', function() {
-        document.body.innerHTML = '';
-        document.body.innerHTML += '<h1>You decide to call your family first...</h1>';
     });
+    
+
 }
+
+
+
