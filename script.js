@@ -996,7 +996,7 @@ window.onload = function() {
                     
                 });
                 
-                document.body.appendChild(button);
+                document.body.appendChild(button-run);
                 
                 
                             
@@ -1077,11 +1077,23 @@ window.onload = function() {
 
                                                 typeWriter();
                                             });
-                                            //last stopped here
-                                            }, 3000); 
+                                            }, 3000); // 3 seconds
+                                            setTimeout(function() {
+                                            document.body.innerHTML += '<h2><j>Congratulations, you just saved your whole family!</j></h2>';
+                                            }, 6000); // 4.5 seconds
+                                            setTimeout(function() {
+                                                document.body.innerHTML ='';
+                                                document.body.innerHTML +='<h1>What will you do now?<h1>';
+                                                document.body.innerHTML += '<button id="run">Run to the grocery store</button>';
+                                                document.body.innerHTML += '<button id="phone">Call someone</button>';
+                                                //stopped here
+                                            }, 9000); // 9 seconds
                                             
+                                    
                                             // Additional code for handling Joe picking up family
                                         });
+
+
 
                                         var button2 = document.createElement('button');
                                         button2.innerHTML = 'Ask Joe to pick up friends';
