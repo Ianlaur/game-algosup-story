@@ -1029,9 +1029,9 @@ window.onload = function() {
                     document.body.innerHTML += '<p>Mama is not available right now. Please leave a message after the beep.</p>';
                 }
                 if (person === 'Freddy') {
-                    document.body.innerHTML += '<p>Freddy is not available right now. Please leave a message after the beep.</p>';
+                    document.body.innerHTML += '<p>You: Hello?</p>';
                     // Play sound for Freddy
-                    var audio = new Audio('freddy_sound.mp3');
+                    var audio = new Audio('C:\Users\IanLAURENT\Desktop\GitHub\game-algosup-story\mp3\Freddie Mercury saying MAMA.mp3');
                     audio.play();
                 }
                 if (person === 'Brother') {
