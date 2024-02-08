@@ -186,7 +186,40 @@ window.onload = function() {
     });
     
 
+
+    
+    document.getElementById('call').addEventListener('click', function() {
+        document.body.innerHTML = '';
+        document.body.innerHTML += '<h1>Who will you call?</h1>';
+        var choices = ['Joe', 'Mama', 'Freddy', 'Brother'];
+
+        function choice(person) {
+            var button = document.createElement('button');
+            button.innerHTML = person;
+            button.addEventListener('click', function() {
+                document.body.innerHTML = '';
+                document.body.innerHTML += '<p>You chose to call: ' + person + '</p>';
+                if (person === 'Joe') {
+                    document.body.innerHTML += '<p>Joe is not available right now. Please leave a message after the beep.</p>';
+                }
+                if (person === 'Mama') {
+                    document.body.innerHTML += '<p>Mama is not available right now. Please leave a message after the beep.</p>';
+                }
+                if (person === 'Freddy') {
+                    document.body.innerHTML += '<p>Freddy is not available right now. Please leave a message after the beep.</p>';
+                }
+                if (person === 'Brother') {
+                    document.body.innerHTML += '<p>Brother is not available right now. Please leave a message after the beep.</p>';
+                }
+            });
+            document.body.appendChild(button);
+        }
+
+        choices.forEach(function(person) {
+            choice(person);
+        });
+    });
+    
+
+
 }
-
-
-
