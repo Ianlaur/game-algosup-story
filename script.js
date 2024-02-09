@@ -1,4 +1,3 @@
-
 window.onload = function () {
     var inventory = []; // Declare and initialize the inventory array
 
