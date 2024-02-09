@@ -1012,208 +1012,39 @@ window.onload = function() {
     
 
 
-}//remove this
-document.getElementById('phone').addEventListener('click', function() {
-    document.body.innerHTML = '';
-    document.body.innerHTML += '<h1>What do you want to do?</h1>';
+    document.getElementById('call').addEventListener('click', function() {
+        document.body.innerHTML = '';
+        document.body.innerHTML += '<h1>Who will you call?</h1>';
+        var choices = ['Joe', 'Mama', 'Freddy', 'Brother'];
 
-    // Create buttons for the player's choices
-    var button1 = document.createElement('button');
-    button1.innerHTML = 'Call someone';
-    button1.addEventListener('click', function() {
+        function choice(person) {
+            var button = document.createElement('button');
+            button.innerHTML = person;
+            button.addEventListener('click', function() {
                 document.body.innerHTML = '';
-                document.body.innerHTML += '<h1>Who will you call?</h1>';
-                var choices = ['Joe', 'Mama', 'Freddy', 'Brother'];
-                function choice(person) {
-                    var button = document.createElement('button');
-                    button.innerHTML = person;
-                    button.addEventListener('click', function() {
-                        document.body.innerHTML = '';
-                        document.body.innerHTML += '<h1>You chose to call: ' + person + '</h1>';
-                        if (person === 'Joe') {
-                            document.body.innerHTML += '<p><b>Joe:</b> <f>Hey! What can I do for you?</f></p>';
-                            // Player's possible responses to Joe
-                            document.body.innerHTML += '<button id="Help-me-survive">Help me survive</button>';
-                            document.body.innerHTML += '<button id="responseToJoe">Can I come to the White House bunker?</button>';
-                                document.getElementById('Help-me-survive').addEventListener('click', function() {
-                                    // Code to run when the "Help-me-survive" button is clicked
-                                    document.body.innerHTML = '';
-                                    document.body.innerHTML += '<h1>Joe</h1>'
-                                    document.body.innerHTML += '<p><b>Joe:</b> Hey! What can I do for you?</p>';
-                                    document.body.innerHTML += '<p><b>You:</b> Help me survive.</p>'; 
-                                    document.body.innerHTML += '<p><b>Joe:</b> <j>Yeah for sure, tell me what you need.</j></p>';
-
-                                    // Create buttons for the player's choices
-                                    var button1 = document.createElement('button');
-                                    button1.innerHTML = 'Ask Joe to pick up family';
-                                    button1.addEventListener('click', function() {
-                                        // Code to run when the "Ask Joe to pick up family" button is clicked
-                                        document.body.innerHTML = '';
-                                        document.body.innerHTML += '<h1>Joe</h1>'
-                                        document.body.innerHTML += '<p><b>Joe:</b> Hey! What can I do for you?</p>';
-                                        document.body.innerHTML += '<p><b>You:</b> Help me survive.</p>'; 
-                                        document.body.innerHTML += '<p><b>Joe:</b> Yeah for sure, tell me what you need.</p>';
-                                        document.body.innerHTML += '<p><b>You:</b> Man I\'m worried for my family, can you do something to get them to a safe place?</p>'
-                                        setTimeout(function() {
-                                        document.body.innerHTML += '<p><b>Joe:</b> <j>Sure, I will send a troop to go and pick up your family.</j></p>';
-                                        var textElements = document.querySelectorAll('j');
-
-                                        // Add CSS styling to the 'strong' class
-                                        var style = document.createElement('style');
-                                        style.innerHTML = '.strong { font-weight: bold; }';
-                                        document.head.appendChild(style);
-
-                                        textElements.forEach(function(element) {
-                                            var text = element.innerHTML;
-                                            element.innerHTML = '';
-                                            var i = 0;
-                                            var speed = 35; // Adjust the typing speed here (in milliseconds)
-
-                                            function typeWriter() {
-                                                if (i < text.length) {
-                                                    element.innerHTML += text.charAt(i);
-                                                    i++;
-                                                    setTimeout(typeWriter, speed);
-                                                }
-                                            }
-
-                                            typeWriter();
-                                        });
-                                        }, 3000); // 3 seconds
-                                        setTimeout(function() {
-                                        document.body.innerHTML += '<h2><j>Congratulations, you just saved your whole family!</j></h2>';
-                                        }, 6000); // 4.5 seconds
-                                        setTimeout(function() {
-                                            document.body.innerHTML ='';
-                                            document.body.innerHTML +='<h1>What will you do now?<h1>';
-
-                                            //s
-                                        }, 9000); // 9 seconds
-                                        
-                                
-                                        // Additional code for handling Joe picking up family
-                                    });
-
-
-
-                                    var button2 = document.createElement('button');
-                                    button2.innerHTML = 'Ask Joe to pick up friends';
-                                    button2.addEventListener('click', function() {
-                                        // Code to run when the "Ask Joe to pick up friends" button is clicked
-                                        document.body.innerHTML = '';
-                                        document.body.innerHTML += '<h1>Joe</h1>'
-                                        document.body.innerHTML += '<p><b>Joe:</b> Alright, I will go and pick up your friends.</p>';
-                                        // Additional code for handling Joe picking up friends
-                                    });
-
-                                    var button3 = document.createElement('button');
-                                    button3.innerHTML = 'Send a helicopter to save yourself';
-                                    button3.addEventListener('click', function() {
-                                        // Code to run when the "Send a helicopter to save yourself" button is clicked
-                                        document.body.innerHTML = '';
-                                        document.body.innerHTML += '<h1>Joe</h1>'
-                                        document.body.innerHTML += '<p><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
-                                        // Additional code for handling sending a helicopter
-                                    });
-
-                                    // Append the buttons to the document body
-                                    document.body.appendChild(button1);
-                                    document.body.appendChild(button2);
-                                    document.body.appendChild(button3);
-                                
-                                        
-                                    
-                                    // Typing animation effect
-                                    var textElements = document.querySelectorAll('j');
-
-                                    // Add CSS styling to the 'strong' class
-                                    var style = document.createElement('style');
-                                    style.innerHTML = '.strong { font-weight: bold; }';
-                                    document.head.appendChild(style);
-
-                                    textElements.forEach(function(element) {
-                                        var text = element.innerHTML;
-                                        element.innerHTML = '';
-                                        var i = 0;
-                                        var speed = 35; // Adjust the typing speed here (in milliseconds)
-
-                                        function typeWriter() {
-                                            if (i < text.length) {
-                                                element.innerHTML += text.charAt(i);
-                                                i++;
-                                                setTimeout(typeWriter, speed);
-                                            }
-                                        }
-
-                                        typeWriter();
-                                    });
-
-                                    var textElements = document.querySelectorAll('o')
-
-                                    var style = document.createElement('style');
-                                    style.innerHTML = '.strong { font-weight: bold; }';
-                                    document.head.appendChild(style);
-                                    textElements.forEach(function(element) {
-                                        var text = element.innerHTML;
-                                        element.innerHTML = '';
-                                        var i = 0;
-                                        var speed = 35; // Adjust the typing speed here (in milliseconds)
-
-                                        function typeWriter() {
-                                            if (i < text.length) {
-                                                element.innerHTML += text.charAt(i);
-                                                i++;
-                                                setTimeout(typeWriter, speed);
-                                            }
-                                        }
-
-                                        typeWriter();
-                                    
-                                    });
-                                });
-                        }
-                        if (person === 'Mama') {
-                            document.body.innerHTML += '<p>Mama is not available right now. Please leave a message after the beep.</p>';
-                        }
-                        if (person === 'Freddy') {
-                            document.body.innerHTML += '<p>You: Hello?</p>';
-                            // Play sound for Freddy
-                            var audio = new Audio('https://github.com/Ianlaur/game-algosup-story/blob/main/mp3/Freddie%20Mercury%20saying%20MAMA.mp3');
-                            audio.play();
-                        }
-                        if (person === 'Brother') {
-                            document.body.innerHTML += '<p>Brother is not available right now. Please leave a message after the beep.</p>';
-                        }
-
-                    // Typing animation effect
-                    var textElements = document.querySelectorAll('f');
-                    textElements.forEach(function(element) {
-                        var text = element.innerHTML;
-                        element.innerHTML = '';
-                        var i = 0;
-                        var speed = 35; // Adjust the typing speed here (in milliseconds)
-                    
-                        function typeWriter() {
-                            if (i < text.length) {
-                                element.innerHTML += text.charAt(i);
-                                i++;
-                                setTimeout(typeWriter, speed);
-                            }
-                        }
-                    
-                        typeWriter();
-                         // Start the typing animation
-                    });
-
-                                    
-                                    
-                                });
-
-                                        document.body.appendChild(button);
-                    }
-            choices.forEach(function(person) {
-                choice(person);
+                document.body.innerHTML += '<p>You chose to call: ' + person + '</p>';
+                if (person === 'Joe') {
+                    document.body.innerHTML += '<p>Joe is not available right now. Please leave a message after the beep.</p>';
+                }
+                if (person === 'Mama') {
+                    document.body.innerHTML += '<p>Mama is not available right now. Please leave a message after the beep.</p>';
+                }
+                if (person === 'Freddy') {
+                    document.body.innerHTML += '<p>You: Hello?</p>';
+                    // Play sound for Freddy
+                    var audio = new Audio('C:\Users\IanLAURENT\Desktop\GitHub\game-algosup-story\mp3\Freddie Mercury saying MAMA.mp3');
+                    audio.play();
+                }
+                if (person === 'Brother') {
+                    document.body.innerHTML += '<p>Brother is not available right now. Please leave a message after the beep.</p>';
+                }
             });
+            document.body.appendChild(button);
+        }
+
+        choices.forEach(function(person) {
+            choice(person);
+        });
     });
     document.body.appendChild(button1);
 
