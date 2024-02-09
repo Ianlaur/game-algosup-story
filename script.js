@@ -4,7 +4,6 @@ window.onload = function () {
     document.getElementById('run').addEventListener('click', function () {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>Where will you run?</h1>';
-
         var choices = ['grocery store', 'weapon store', 'drug store', 'the white house'];
 
         choices.forEach(function (choice) {
@@ -47,7 +46,7 @@ window.onload = function () {
                                     document.body.appendChild(additionalButton);
 
                                 });
-                                // Leave button grocery1
+// Leave button grocery1
                                 var simpleButton = document.createElement('button');
                                 simpleButton.innerHTML = 'Leave the store';
 
@@ -169,7 +168,7 @@ window.onload = function () {
 
 
                             document.body.appendChild(takeAnythingElseButton);
-                            //Leave button grocery 2
+//Leave button grocery 2
                             var simpleButton = document.createElement('button');
                             simpleButton.innerHTML = 'Leave the store';
 
@@ -288,11 +287,11 @@ window.onload = function () {
                             document.body.appendChild(simpleButton);
                         });
 
-
+                        
                         document.body.appendChild(groceryButton);
 
                     });
-
+                    
                 }
 
                 // what to take weapon store
@@ -985,11 +984,51 @@ window.onload = function () {
                 }
                 //what happens in white house
                 if (choice === 'the white house') {
-                    document.body.innerHTML += '<p>You chose to go to the White House...</p>';
+                    document.body.innerHTML += '<p>As you walk to the white house...</p>';
+
+                    var intervalId;
+                    var isBlue = true;
+                    var toggleCount = 0;
+
+                    function toggleSiren() {
+                        if (isBlue) {
+                            document.body.style.backgroundColor = 'red';
+                            isBlue = false;
+                        } else {
+                            document.body.style.backgroundColor = 'blue';
+                            isBlue = true;
+                        }
+
+                        toggleCount++;
+                        if (toggleCount === 4) {
+                            clearInterval(intervalId);
+                        }
+                    }
+
+                    intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
+
+                    intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
+                    
                     setTimeout(function () {
-                        document.body.innerHTML += '<p>Unfortunately, you were caught by the guards and got killed.</p>';
-                    }, 3000); // 3 seconds
+                        
+                        document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
+                        document.body.style.backgroundColor = 'red';
+                    }, 6000); //7 seconds
+
+                    setTimeout(function () {
+                    // Exit the game button
+                    const exitButton = document.createElement('button');
+                    exitButton.textContent = 'Exit Game';
+                    exitButton.addEventListener('click', function() {
+                        document.location.reload();
+                    });
+                    document.body.appendChild(exitButton);
+                    }, 9000); //7 seconds
+
                 }
+
+
+
 
 
 

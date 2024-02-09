@@ -6,22 +6,42 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        body {
+
+
+        #timer {
+                    font-family: 'Digital-7', sans-serif;
+                    font-size: 24px;
+                    color: rgb(0, 0, 0);
+                    margin-top: 20px;
+                    position: fixed;
+                    left: 10px;
+                    top: 10px;
+        }
+        
+
+        body{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-image: url("https://github.com/Ianlaur/game-algosup-story/blob/main/Img/nuclear-weapons_0_0_0.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 10px;
+            border-color: black;
+            box-shadow: inset 0 0 10px #264525;
+        }
+        
+        
     </style>
 </head>
 <body>
     <h1>Nuclear reactor at 300km from you exploded run and find a bunker!!</h1>
-    
+    <div id="timer">10:00</div>
     <p>Choose what you will do first:</p>
     
     <button id="run">Run</button>
@@ -29,9 +49,38 @@
 
     <script src="script.js"></script>
     
+
     
+    <script>
+        let time = 10 * 60; // 10 minutes in seconds
+        let timerElement = document.getElementById('timer');
+        
+        let intervalId = setInterval(function() {
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+        
+            // add leading zeros if needed
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+        
+            timerElement.textContent = `${minutes}:${seconds}`;
+        
+            time--;
+        
+            // stop the timer when it reaches 0
+            if (time < 0) {
+                clearInterval(intervalId);
+                timerElement.textContent = '00:00';
+            }
+        }, 1000);
+        </script>
+
+
 </body>
 </html>
+    
+    
+
         
 
         
