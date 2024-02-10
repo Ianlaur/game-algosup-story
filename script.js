@@ -84,7 +84,6 @@ window.onload = function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                     document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-
                                                                 });
                                                                 document.body.appendChild(additionalButton);
                                                             });
@@ -103,7 +102,7 @@ window.onload = function () {
                                             }
                                             if (choice === 'drug store') {
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
-                                                var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
+                                                var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
                                                 drugChoices.forEach(function (drugChoice) {
                                                     var drugButton = document.createElement('button');
                                                     drugButton.innerHTML = drugChoice;
@@ -117,15 +116,21 @@ window.onload = function () {
                                                         takeAnythingElseButton.addEventListener('click', function () {
                                                             document.body.innerHTML = ''; // Clear the screen
                                                             document.body.innerHTML += '<h2>What else will you take?</h2>';
-                                                            var additionalChoices = ['medkit', 'vitamins', 'prescription drugs'];
+                                                            var additionalChoices = ['medkit', '2 anti-radiation suit', 'prescription drugs'];
                                                             additionalChoices.forEach(function (additionalChoice) {
                                                                 var additionalButton = document.createElement('button');
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
+                                                                    document.body.innerHTML = '';
                                                                     document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML = '';
+                                                                        document.body.innerHTML += '<p>As you leave the store, you receive a phone call...</p>';
+                                                                        document.body.innerHTML += '<p>hello</p>';
+                                                                    }, 3000); //3 seconds
+                                                                    document.body.innerHTML += '<p>hello</p>';
                                                                 });
                                                                 document.body.appendChild(additionalButton);
 
