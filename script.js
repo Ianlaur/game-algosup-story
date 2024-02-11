@@ -1368,6 +1368,7 @@ window.onload = function () {
         button1.addEventListener('click', function () {
             document.body.innerHTML = '';
             document.body.innerHTML += '<h1>Who will you call?</h1>';
+            document.body.innerHTML += '<img src="img/Calling.png" alt="Calling" style="width: 250px">';
             var choices = ['Joe', 'Mama', 'Freddy', 'Brother'];
             function choice(person) {
                 var button = document.createElement('button');
@@ -1526,6 +1527,7 @@ window.onload = function () {
                         // Play sound for Freddy
                                 var audio = new Audio('mp3/ I want to break free Sound .mp3');
                                 audio.play();
+                                document.body.innerHTML += '<img src="img/Freddy.png" alt="Freddy" style="width: 250px">';
                                 // Typing animation effect  for Freddy
                                 var textElements = document.querySelectorAll('f');
                                 textElements.forEach(function (element) {
