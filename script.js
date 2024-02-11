@@ -5,7 +5,7 @@ window.onload = function () {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>Where will you run?</h1>';
         var choices = ['grocery store', 'weapon store', 'drug store', 'the white house'];
-
+        
         choices.forEach(function (choice) {
             var button = document.createElement('button');
             button.innerHTML = choice;
@@ -1521,10 +1521,30 @@ window.onload = function () {
                         document.body.innerHTML += '<p>Mama is not available right now. Please leave a message after the beep.</p>';
                     }
                     if (person === 'Freddy') {
-                        document.body.innerHTML += '<p>You: Hello?</p>';
+                        document.body.innerHTML += '<p><b>You:</b> Hello?</p>';
                         // Play sound for Freddy
-                        var audio = new Audio('https://github.com/Ianlaur/game-algosup-story/blob/main/mp3/Freddie%20Mercury%20saying%20MAMA.mp3');
-                        audio.play();
+                                var audio = new Audio('mp3/ I want to break free Sound .mp3');
+                                audio.play();
+                                // Typing animation effect  for Freddy
+                                var textElements = document.querySelectorAll('f');
+                                textElements.forEach(function (element) {
+                                    var text = element.innerHTML;
+                                    element.innerHTML = '';
+                                    var i = 0;
+                                    var speed = 35; // Adjust the typing speed here (in milliseconds)
+
+                                    function typeWriter() {
+                                        if (i < text.length) {
+                                            element.innerHTML += text.charAt(i);
+                                            i++;
+                                            setTimeout(typeWriter, speed);
+                                        }
+                                    }
+
+                                    typeWriter();
+                                    // Start the typing animation
+                                });
+                        document.body.innerHTML += '<p><b>Freddy:</b> <f>I want to break free!</f></p>';
                     }
                     if (person === 'Brother') {
                         document.body.innerHTML += '<p>Brother is not available right now. Please leave a message after the beep.</p>';
