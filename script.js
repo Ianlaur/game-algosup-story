@@ -1360,7 +1360,8 @@ window.onload = function () {
     document.getElementById('phone').addEventListener('click', function () {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>What do you want to do?</h1>';
-
+        document.body.innerHTML += '<img src="img/phone.png" alt="Image" style="width: 250px">';
+        
         // Create buttons for the player's choices
         var button1 = document.createElement('button');
         button1.innerHTML = 'Call someone';
