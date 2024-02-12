@@ -37,7 +37,7 @@ window.onload = function () {
 
     darkenScreen(); // Start darkening the screen
 
-
+            
     document.getElementById('run').addEventListener('click', function () {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>Where will you run?</h1>';
