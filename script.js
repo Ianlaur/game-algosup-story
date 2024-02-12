@@ -1688,10 +1688,116 @@ window.onload = function () {
                                                             var additionalButton = document.createElement('button');
                                                             additionalButton.innerHTML = additionalChoice;
                                                             additionalButton.addEventListener('click', function () {
+                                                                document.body.innerHTML = '';
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                 document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                                                document.body.innerHTML += '<h1>Where will you run now?</h1>';
+                                                                    // Button to go to the bunker
+                                                                    var bunkerButton = document.createElement('button');
+                                                                    bunkerButton.innerHTML = 'Go to the bunker';
+                                                                    bunkerButton.addEventListener('click', function () {
+                                                                        document.body.innerHTML = ''; // Clear the screen
+                                                                        document.body.innerHTML += '<p>You chose to go to the bunker.</p>';
+                                                                        document.body.innerHTML += '<p>You died of starvation.</p>';
+                                                                        document.body.style.backgroundColor = 'red';
+                                                                        var restartButton = document.createElement('button');
+                                                                        restartButton.innerHTML = 'Exit';
+                                                                        restartButton.addEventListener('click', function () {
+                                                                            location.reload(); // Reload the page to restart the file
+                                                                        });
+                                                                        document.body.appendChild(restartButton);       
+                                                                    });
+                                                                    document.body.appendChild(bunkerButton);
 
+                                                                    // Button to go to the white house
+                                                                    var whiteHouseButton = document.createElement('button');
+                                                                    whiteHouseButton.innerHTML = 'Go to the white house';
+                                                                    whiteHouseButton.addEventListener('click', function () {
+                                                                        document.body.innerHTML = ''; // Clear the screen
+                                                                        document.body.innerHTML += '<p>You chose to go to the white house.</p>';
+                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                        setTimeout(function() {
+                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                            var answerButton = document.createElement('button');
+                                                                            document.body.appendChild(answerButton);
+                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                            answerButton.addEventListener('click', function() {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                                setTimeout(function() {
+                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+                                                                                
+                                                                            
+                                                                                var answerButton = document.createElement('button');
+                                                                                document.body.appendChild(answerButton);
+                                                                                answerButton.innerHTML = 'Leave';
+                                                                                answerButton.addEventListener('click', function() {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    setTimeout(function() {
+                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function() {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }, 2000);
+                                                                                });
+                                                                                var answerButton = document.createElement('button');
+                                                                                document.body.appendChild(answerButton);
+                                                                                answerButton.innerHTML = 'Fight with him';
+                                                                                answerButton.addEventListener('click', function() {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                    setTimeout(function() {
+                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function() {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }, 2000);
+                                                                                
+                                                                                });
+                                                                            },2000);
+                                                                            });
+                                                                            var answerButton = document.createElement('button');
+                                                                                document.body.appendChild(answerButton);
+                                                                                answerButton.innerHTML = 'Leave';
+                                                                                answerButton.addEventListener('click', function() {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    setTimeout(function() {
+                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function() {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }, 2000);
+                                                                                });
+                                                                        }, 3000);
+
+                                                                    
+                                                                    
+                                                                        
+                                                                    }); 
+                                                                    document.body.appendChild(whiteHouseButton);
                                                             });
                                                             document.body.appendChild(additionalButton);
 
@@ -1702,7 +1808,119 @@ window.onload = function () {
 
 
                                                     });
+
                                                     document.body.appendChild(takeAnythingElseButton);
+                                                    var leaveStoreButton = document.createElement('button');
+                                                    document.body.appendChild(leaveStoreButton);
+                                                    leaveStoreButton.innerHTML = 'Leave Store';
+                                                    leaveStoreButton.addEventListener('click', function() {
+                                                        document.body.innerHTML = '';
+                                                        document.body.innerHTML += '<p>You decided to leave the store</p>';
+                                                        document.body.innerHTML += '<h1>Where will you run now?</h1>';
+                                                            var bunkerButton = document.createElement('button');
+                                                            bunkerButton.innerHTML = 'Bunker';
+                                                            bunkerButton.addEventListener('click', function() {
+                                                                document.body.innerHTML = '';
+                                                                document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                setTimeout(function() {
+                                                                    document.body.innerHTML += '<p>You are safe in the bunker</p>';
+                                                                    document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
+                                                                    document.body.style.backgroundColor = 'red';
+                                                                    var restartButton = document.createElement('button');
+                                                                    restartButton.innerHTML = 'Exit';
+                                                                    restartButton.addEventListener('click', function() {
+                                                                        location.reload(); // Reload the page to restart the file
+                                                                    });
+                                                                    document.body.appendChild(restartButton);
+                                                                }, 2000);
+                                                            });
+                                                            document.body.appendChild(bunkerButton);
+
+                                                           
+                                                                    var button2 = document.createElement('button');
+                                                                                    button2.innerHTML = 'Go to white house';
+                                                                                    button2.addEventListener('click', function() {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                                        setTimeout(function() {
+                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                            var answerButton = document.createElement('button');
+                                                                                            document.body.appendChild(answerButton);
+                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                                            answerButton.addEventListener('click', function() {
+                                                                                                document.body.innerHTML = '';
+                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                                                setTimeout(function() {
+                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+                                                                                                
+                                                                                            
+                                                                                                var answerButton = document.createElement('button');
+                                                                                                document.body.appendChild(answerButton);
+                                                                                                answerButton.innerHTML = 'Leave';
+                                                                                                answerButton.addEventListener('click', function() {
+                                                                                                    document.body.innerHTML = '';
+                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    setTimeout(function() {
+                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                                        var restartButton = document.createElement('button');
+                                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                                        restartButton.addEventListener('click', function() {
+                                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                                        });
+                                                                                                        document.body.appendChild(restartButton);
+                                                                                                    }, 2000);
+                                                                                                });
+                                                                                                var answerButton = document.createElement('button');
+                                                                                                document.body.appendChild(answerButton);
+                                                                                                answerButton.innerHTML = 'Fight with him';
+                                                                                                answerButton.addEventListener('click', function() {
+                                                                                                    document.body.innerHTML = '';
+                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                                    setTimeout(function() {
+                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                                        var restartButton = document.createElement('button');
+                                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                                        restartButton.addEventListener('click', function() {
+                                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                                        });
+                                                                                                        document.body.appendChild(restartButton);
+                                                                                                    }, 2000);
+                                                                                                
+                                                                                                });
+                                                                                            },2000);
+                                                                                            });
+                                                                                            var answerButton = document.createElement('button');
+                                                                                                document.body.appendChild(answerButton);
+                                                                                                answerButton.innerHTML = 'Leave';
+                                                                                                answerButton.addEventListener('click', function() {
+                                                                                                    document.body.innerHTML = '';
+                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    setTimeout(function() {
+                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                                        var restartButton = document.createElement('button');
+                                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                                        restartButton.addEventListener('click', function() {
+                                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                                        });
+                                                                                                        document.body.appendChild(restartButton);
+                                                                                                    }, 2000);
+                                                                                                });
+                                                                                        }, 3000);
+
+                                                                                    });
+                                                                                    document.body.appendChild(button2);
+                                                                }, 2000);v
                                                 });
                                                 document.body.appendChild(drugButton);
 
@@ -1755,10 +1973,12 @@ window.onload = function () {
                                     });
                                     document.body.appendChild(button);
                                 });
+                                
                             });
 
                             // Append the button to the document body
                             document.body.appendChild(simpleButton);
+                            
                         });
 
 
