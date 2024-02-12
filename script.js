@@ -52,7 +52,7 @@ window.onload = function () {
                 document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
                 // choice of what to take
                 if (choice === 'grocery store') {
-                    document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image of grocery store" style="width: 250px; height: auto;">';                                      
+                    document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 250px; height: auto;">';
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                     groceryChoices.forEach(function (groceryChoice) {
