@@ -310,6 +310,47 @@ window.onload = function () {
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
+                                                                                                                var choiceButton1 = document.createElement('button');
+                                                                                                                choiceButton1.innerHTML = 'Go to girlfriends house';
+                                                                                                                choiceButton1.addEventListener('click', function () {
+                                                                                                                    document.body.innerHTML = '';
+                                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                                    setTimeout(function () {
+                                                                                                                        document.body.innerHTML += '<p>As you drive to her place</p>';
+                                                                                                                        document.body.innerHTML += '<p>You get caught up by the radiation</p>';
+                                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                                                        var restartButton = document.createElement('button');
+                                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                                    });
+                                                                                                                    document.body.appendChild(restartButton);
+
+                                                                                                                    }, 2000);
+                                                                                                                });
+                                                                                                                document.body.appendChild(choiceButton1);
+
+                                                                                                                var choiceButton2 = document.createElement('button');
+                                                                                                                choiceButton2.innerHTML = 'Get in the car';
+                                                                                                                choiceButton2.addEventListener('click', function () {
+                                                                                                                    document.body.innerHTML = '';
+                                                                                                                    document.body.innerHTML += '<p>The radiation caught up to you.</p>';
+                                                                                                                    document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
+                                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                                    // Create Restart Button
+                                                                                                                    var restartButton = document.createElement('button');
+                                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                                    });
+                                                                                                                    document.body.appendChild(restartButton);
+                                                                                                                });
+                                                                                                                document.body.appendChild(choiceButton2); 
+                                                                                                        
                                                                                                     }, 2000);
                                                                                                 });
 
