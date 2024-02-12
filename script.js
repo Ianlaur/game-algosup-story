@@ -3123,10 +3123,10 @@ window.onload = function () {
                                         inventory.push(additionalChoice); // Add the chosen item to the inventory
                                         document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-
+                                        
                                     });
                                     document.body.appendChild(additionalButton);
-
+                                    
                                 });
 
 
