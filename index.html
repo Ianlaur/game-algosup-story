@@ -32,48 +32,39 @@
             font-size: 18px;
             margin: 10px;
             border-radius: 10px;
-            border-color: black;
-            box-shadow: inset 0 0 10px #264525;
+            border-color: rgb(0, 0, 0);
+            box-shadow: inset 0 0 10px #84ff80;
         }
         
-        
+        .darken {
+            background-color: black;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+            animation: pulse2 3s infinite;
+            color: white; /* Change the text color to white */
+            background-color: rgb(10, 13, 10);
+            transition: background-color 1s;
+            
+        }
     </style>
 </head>
 <body>
-    <h1>Nuclear reactor at 300km from you exploded run and find a bunker!!</h1>
-    <div id="timer">10:00</div>
+    <h1>Nuclear reactor at 30km from you exploded!</h1>
+    <h2>You have approximately 10 minutes before being touched by the radiation...</h2>
+    <br>
     <p>Choose what you will do first:</p>
     
-    <button id="run">Run</button>
+    <button id="run">Run somewhere</button>
     <button id="phone">Phone</button>
 
     <script src="script.js"></script>
-    
-
-    
-    <script>
-        let time = 10 * 60; // 10 minutes in seconds
-        let timerElement = document.getElementById('timer');
-        
-        let intervalId = setInterval(function() {
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-        
-            // add leading zeros if needed
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-        
-            timerElement.textContent = `${minutes}:${seconds}`;
-        
-            time--;
-        
-            // stop the timer when it reaches 0
-            if (time < 0) {
-                clearInterval(intervalId);
-                timerElement.textContent = '00:00';
-            }
-        }, 1000);
-        </script>
 
 
 </body>
