@@ -28,7 +28,7 @@ window.onload = function () {
             // Exit the game button
             const exitButton = document.createElement('button');
             exitButton.textContent = 'Exit Game';
-            exitButton.addEventListener('click', function() {
+            exitButton.addEventListener('click', function () {
                 document.location.reload();
             });
             document.body.appendChild(exitButton);
@@ -36,7 +36,7 @@ window.onload = function () {
     }
 
     darkenScreen(); // Start darkening the screen
-    
+
 
     document.getElementById('run').addEventListener('click', function () {
         document.body.innerHTML = '';
@@ -58,7 +58,7 @@ window.onload = function () {
                         var groceryButton = document.createElement('button');
                         groceryButton.innerHTML = groceryChoice;
                         groceryButton.addEventListener('click', function () {
-                            document.body.innerHTML = ''; 
+                            document.body.innerHTML = '';
                             inventory.push(groceryChoice); // Add the chosen item to the inventory
                             document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
@@ -80,271 +80,326 @@ window.onload = function () {
                                         inventory.push(additionalChoice); // Add the chosen item to the inventory
                                         document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-//Leave  grocery3
+                                        //Leave  grocery3
                                         var simpleButton = document.createElement('button');
                                         simpleButton.innerHTML = 'Leave store';
 
-                                        simpleButton.addEventListener('click', function() {
+                                        simpleButton.addEventListener('click', function () {
                                             document.body.innerHTML = '';
                                             document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                             var choices = ['Gun store', 'drug store', 'the white house'];
-                                    choices.forEach(function (choice) {
-                                        var button = document.createElement('button');
-                                        button.innerHTML = choice;
-                                        // choice of where to go
-                                        button.addEventListener('click', function () {
-                                            document.body.innerHTML = ''; // Clear the screen
-                                            document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
-                                            // choice of what to take
-                                            if (choice === 'Gun store') {
-                                                document.body.innerHTML += '<h2>What will you take?</h2>';
-                                                var groceryChoices = ['knife', 'grenade', 'gun'];
-                                                groceryChoices.forEach(function (groceryChoice) {
-                                                    var groceryButton = document.createElement('button');
-                                                    groceryButton.innerHTML = groceryChoice;
-                                                    groceryButton.addEventListener('click', function () {
-                                                        inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
-                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-                                                        document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
-                                                        // Ask if the player wants to take anything else in the grocery store
-                                                        var takeAnythingElseButton = document.createElement('button');
-                                                        takeAnythingElseButton.innerHTML = 'Take anything else?';
-                                                        takeAnythingElseButton.addEventListener('click', function () {
-                                                            document.body.innerHTML = ''; // Clear the screen
-                                                            document.body.innerHTML += '<h2>What else will you take?</h2>';
-                                                            var additionalChoices = ['water', 'flashlight', 'rope', ' Raw meat'];
-                                                            additionalChoices.forEach(function (additionalChoice) {
-                                                                var additionalButton = document.createElement('button');
-                                                                additionalButton.innerHTML = additionalChoice;
-                                                                additionalButton.addEventListener('click', function () {
-                                                                    inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
-                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                            choices.forEach(function (choice) {
+                                                var button = document.createElement('button');
+                                                button.innerHTML = choice;
+                                                // choice of where to go
+                                                button.addEventListener('click', function () {
+                                                    document.body.innerHTML = ''; // Clear the screen
+                                                    document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                                    // choice of what to take
+                                                    if (choice === 'Gun store') {
+                                                        document.body.innerHTML += '<h2>What will you take?</h2>';
+                                                        var groceryChoices = ['knife', 'grenade', 'gun'];
+                                                        groceryChoices.forEach(function (groceryChoice) {
+                                                            var groceryButton = document.createElement('button');
+                                                            groceryButton.innerHTML = groceryChoice;
+                                                            groceryButton.addEventListener('click', function () {
+                                                                inventory.push(groceryChoice); // Add the chosen item to the inventory
+                                                                document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                                document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                                                document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
+                                                                // Ask if the player wants to take anything else in the grocery store
+                                                                var takeAnythingElseButton = document.createElement('button');
+                                                                takeAnythingElseButton.innerHTML = 'Take anything else?';
+                                                                takeAnythingElseButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<h2>What else will you take?</h2>';
+                                                                    var additionalChoices = ['water', 'flashlight', 'rope', ' Raw meat'];
+                                                                    additionalChoices.forEach(function (additionalChoice) {
+                                                                        var additionalButton = document.createElement('button');
+                                                                        additionalButton.innerHTML = additionalChoice;
+                                                                        additionalButton.addEventListener('click', function () {
+                                                                            inventory.push(additionalChoice); // Add the chosen item to the inventory
+                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                                                        });
+                                                                        document.body.appendChild(additionalButton);
+                                                                    });
+
+                                                                    document.body.appendChild(goBackButton);
                                                                 });
-                                                                document.body.appendChild(additionalButton);
+
+                                                                document.body.appendChild(takeAnythingElseButton);
+
                                                             });
 
-                                                            document.body.appendChild(goBackButton);
+                                                            document.body.appendChild(groceryButton);
+
                                                         });
 
-                                                        document.body.appendChild(takeAnythingElseButton);
-
-                                                    });
-
-                                                    document.body.appendChild(groceryButton);
-
-                                                });
-
-                                            }
-                                            if (choice === 'drug store') {
-                                                document.body.innerHTML += '<h2>What will you take?</h2>';
-                                                var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
-                                                drugChoices.forEach(function (drugChoice) {
-                                                    var drugButton = document.createElement('button');
-                                                    drugButton.innerHTML = drugChoice;
-                                                    drugButton.addEventListener('click', function () {
-                                                        inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
-                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-                                                        // Ask if the player wants to take anything else in the drug store
-                                                        var takeAnythingElseButton = document.createElement('button');
-                                                        takeAnythingElseButton.innerHTML = 'Take anything else?';
-                                                        takeAnythingElseButton.addEventListener('click', function () {
-                                                            document.body.innerHTML = ''; // Clear the screen
-                                                            document.body.innerHTML += '<h2>What else will you take?</h2>';
-                                                            var additionalChoices = ['medkit', '2 anti-radiation suit', 'prescription drugs'];
-                                                            additionalChoices.forEach(function (additionalChoice) {
-                                                                var additionalButton = document.createElement('button');
-                                                                additionalButton.innerHTML = additionalChoice;
-                                                                additionalButton.addEventListener('click', function () {
-                                                                    inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML = '';
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
-                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-                                                                    if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') && inventory.includes('boite de conserve') && inventory.includes('water')) {
-                                                                        setTimeout(function() {
+                                                    }
+                                                    if (choice === 'drug store') {
+                                                        document.body.innerHTML += '<h2>What will you take?</h2>';
+                                                        var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
+                                                        drugChoices.forEach(function (drugChoice) {
+                                                            var drugButton = document.createElement('button');
+                                                            drugButton.innerHTML = drugChoice;
+                                                            drugButton.addEventListener('click', function () {
+                                                                inventory.push(drugChoice); // Add the chosen item to the inventory
+                                                                document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                                document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                                                // Ask if the player wants to take anything else in the drug store
+                                                                var takeAnythingElseButton = document.createElement('button');
+                                                                takeAnythingElseButton.innerHTML = 'Take anything else?';
+                                                                takeAnythingElseButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<h2>What else will you take?</h2>';
+                                                                    var additionalChoices = ['medkit', '2 anti-radiation suit', 'prescription drugs'];
+                                                                    additionalChoices.forEach(function (additionalChoice) {
+                                                                        var additionalButton = document.createElement('button');
+                                                                        additionalButton.innerHTML = additionalChoice;
+                                                                        additionalButton.addEventListener('click', function () {
+                                                                            inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                             document.body.innerHTML = '';
-                                                                            document.body.innerHTML += '<p>As you leave the store, you receive a phone call...</p>';
-                                                                            setTimeout (function() {
-                                                                            document.body.innerHTML += '<p><b>Joe:</b><j> Hey! I retrieved all of your family, they are safe in the white house bunker! Come if you need</j></p>';
-                                                                            
-                                                                                var button1 = document.createElement('button');
-                                                                                button1.innerHTML = 'Great! I\'ll head to the white house!';
-                                                                                button1.addEventListener('click', function() {
+                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
+                                                                            if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') && inventory.includes('boite de conserve') && inventory.includes('water')) {
+                                                                                setTimeout(function () {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p><b>You</b> Great I\'ll head to the white house!</p>';
-                                                                                    document.body.innerHTML += '<p><b>Joe:</b><j> See you! </j></p>';
-                                                                                    setTimeout(function() {
-                                                                                    var newButton = document.createElement('button');
-                                                                                    newButton.innerHTML = 'Go to white house';
-                                                                                    newButton.addEventListener('click', function() {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>As you go to the white house you enter the bunker...</p>';
-                                                                                        document.body.innerHTML += '<p>You get to see your family there, you feel releived.</p>';
-                                                                                        setTimeout (function() {
-                                                                                        document.body.innerHTML += '<p>A few days passes and you start to feel guilty about not saving your friends and your grilfriend...</p>';
-                                                                                        }, 2000);
-                                                                                        setTimeout (function() {
-                                                                                        document.body.innerHTML += '<p>Your guilt has taken over your mental state, you commited suicide...</p>';
-                                                                                        document.body.innerHTML += '<p>Try again.</p>';
-                                                                                        }, 4000);
-                                                                                    });
-                                                                                    document.body.appendChild(newButton);
-                                                                                        
-                                                                                    }, 2000);
-                                                                                });
-                                                                                document.body.appendChild(button1);
+                                                                                    document.body.innerHTML += '<p>As you leave the store, you receive a phone call...</p>';
+                                                                                    setTimeout(function () {
+                                                                                        document.body.innerHTML += '<p><b>Joe:</b><j> Hey! I retrieved all of your family, they are safe in the white house bunker! Come if you need</j></p>';
 
-                                                                                // Button 2
-                                                                                var button2 = document.createElement('button');
-                                                                                button2.innerHTML = 'Thanks but I stil have somethings to do, we\'ll stay in touch!';
-                                                                                button2.addEventListener('click', function() {
-                                                                                
-                                                                                    document.body.innerHTML ='';
-                                                                                    document.body.innerHTML += '<p>Joe: Stay safe!</p>';
-                                                                                    setTimeout(function() {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p> As you hang-up you see a car with the keys in it, you decide to take the car.';
-                                                                                        document.body.innerHTML += '<h2>Where will you go?</h2>';
-                                                                                        var goSomewhereElseButton = document.createElement('button');
-                                                                                        goSomewhereElseButton.innerHTML = 'Go to girlfriend\'s house';
-                                                                                        goSomewhereElseButton.addEventListener('click', function () {
+                                                                                        var button1 = document.createElement('button');
+                                                                                        button1.innerHTML = 'Great! I\'ll head to the white house!';
+                                                                                        button1.addEventListener('click', function () {
                                                                                             document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
-                                                                                            document.body.innerHTML += '<p>As you walk to your girlfriend, you see her scared to death....</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You take her in your arms...</p>';
-                                                                                            document.body.innerHTML += '<p><b>You:</b>Thank god you\'re safe.</p>';
-                                                                                            document.body.innerHTML += '<p><b>Girlfirend:</b>Thank you for coming to save me.</p>';
-                                                                                            document.body.innerHTML += '<h2>Time is running out, radiation is getting closer and closer... What will you do?</h2>';
-                                                                                                var choiceButton1 = document.createElement('button');
-                                                                                                choiceButton1.innerHTML = 'Wear anti-radiation suit and mask';
-                                                                                                choiceButton1.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML ='';
-                                                                                                    document.body.innerHTML += '<p>As you both wear your anti-radiation suits and mask you get in the car.</p>';
-                                                                                                    //
-                                                                                                });
-                                                                                                document.body.appendChild(choiceButton1);
-
-                                                                                                var choiceButton2 = document.createElement('button');
-                                                                                                choiceButton2.innerHTML = 'Get in the car';
-                                                                                                choiceButton2.addEventListener('click', function() {
+                                                                                            document.body.innerHTML += '<p><b>You</b> Great I\'ll head to the white house!</p>';
+                                                                                            document.body.innerHTML += '<p><b>Joe:</b><j> See you! </j></p>';
+                                                                                            setTimeout(function () {
+                                                                                                var newButton = document.createElement('button');
+                                                                                                newButton.innerHTML = 'Go to white house';
+                                                                                                newButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>The radiation caught up to you</p>';
-                                                                                                    document.body.innerHTML += '<p>Unfortunately you didn\'t have enough time time to run away.</p>';
-                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
-                                                                                                    // Create Restart Button
-                                                                                                    var restartButton = document.createElement('button');
-                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                    restartButton.addEventListener('click', function() {
-                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                    });
-
-                                                                                                    document.body.appendChild(restartButton);
+                                                                                                    document.body.innerHTML += '<p>As you go to the white house you enter the bunker...</p>';
+                                                                                                    document.body.innerHTML += '<p>You get to see your family there, you feel releived.</p>';
+                                                                                                    setTimeout(function () {
+                                                                                                        document.body.innerHTML += '<p>A few days passes and you start to feel guilty about not saving your friends and your grilfriend...</p>';
+                                                                                                    }, 2000);
+                                                                                                    setTimeout(function () {
+                                                                                                        document.body.innerHTML += '<p>Your guilt has taken over your mental state, you commited suicide...</p>';
+                                                                                                        document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                    }, 4000);
                                                                                                 });
-                                                                                                document.body.appendChild(choiceButton2);
-                                                                                            
-                                                                                        });
+                                                                                                document.body.appendChild(newButton);
 
-                                                                                        var takeAnythingElseButton = document.createElement('button');
-                                                                                        takeAnythingElseButton.innerHTML = 'Go to friend\'s house';
-                                                                                        takeAnythingElseButton.addEventListener('click', function () {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>You chose to go to your friend\'s house.</p>';
-                                                                                            setTimeout(function() {
-                                                                                                document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
-                                                                                                document.body.innerHTML += '<p>He doesn\'t answer </p>';
                                                                                             }, 2000);
                                                                                         });
+                                                                                        document.body.appendChild(button1);
 
-                                                                                        document.body.appendChild(goSomewhereElseButton);
-                                                                                        document.body.appendChild(takeAnythingElseButton);
-                                                                                        
-                                                                                    }, 2000);
-                                                                                
-                                                                                });
-                                                                                document.body.appendChild(button2);
+                                                                                        // Button 2
+                                                                                        var button2 = document.createElement('button');
+                                                                                        button2.innerHTML = 'Thanks but I stil have somethings to do, we\'ll stay in touch!';
+                                                                                        button2.addEventListener('click', function () {
 
-                                                                                
-                                                                            }, 3000);
-                                                                        }, 2000);
-                                                                    }
+                                                                                            document.body.innerHTML = '';
+                                                                                            document.body.innerHTML += '<p>Joe: Stay safe!</p>';
+                                                                                            setTimeout(function () {
+                                                                                                document.body.innerHTML = '';
+                                                                                                document.body.innerHTML += '<p> As you hang-up you see a car with the keys in it, you decide to take the car.';
+                                                                                                document.body.innerHTML += '<h2>Where will you go?</h2>';
+                                                                                                var goSomewhereElseButton = document.createElement('button');
+                                                                                                goSomewhereElseButton.innerHTML = 'Go to girlfriend\'s house';
+                                                                                                goSomewhereElseButton.addEventListener('click', function () {
+                                                                                                    document.body.innerHTML = '';
+                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p>As you walk to your girlfriend, you see her scared to death....</p>';
+                                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                                    setTimeout(function () {
+                                                                                                        document.body.innerHTML += '<p>You take her in your arms...</p>';
+                                                                                                        document.body.innerHTML += '<p><b>You:</b>Thank god you\'re safe.</p>';
+                                                                                                        document.body.innerHTML += '<p><b>Girlfirend:</b>Thank you for coming to save me.</p>';
+
+                                                                                                        setTimeout(function () {
+                                                                                                            document.body.innerHTML += '<h2>Time is running out, radiation is getting closer and closer... What will you do?</h2>';
+                                                                                                            var choiceButton1 = document.createElement('button');
+                                                                                                            choiceButton1.innerHTML = 'Wear anti-radiation suit and mask';
+                                                                                                            choiceButton1.addEventListener('click', function () {
+                                                                                                                document.body.innerHTML = '';
+                                                                                                                document.body.innerHTML += '<p>As you both wear your anti-radiation suits and mask you get in the car.</p>';
+                                                                                                                document.body.innerHTML += '<p>As you drive towards your bunker...</p>';
+
+                                                                                                                document.body.innerHTML += '<h2>You receive a phone call</h2>';
+
+                                                                                                                var answerButton = document.createElement('button');
+                                                                                                                answerButton.innerHTML = 'Answer';
+                                                                                                                answerButton.addEventListener('click', function () {
+                                                                                                                    document.body.innerHTML = '';
+                                                                                                                    document.body.innerHTML += '<p>As you try to pick up the phone you deviate from the road and crashed into a wall.</p>';
+                                                                                                                    document.body.innerHTML += '<p>You killed yourself girlfriend... </p>';
+                                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                                    var restartButton = document.createElement('button');
+                                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                                    });
+
+                                                                                                                });
+                                                                                                                document.body.appendChild(answerButton);
+
+                                                                                                                var answerButton = document.createElement('button');
+                                                                                                                answerButton.innerHTML = 'Ignore';
+                                                                                                                answerButton.addEventListener('click', function () {
+                                                                                                                    document.body.innerHTML = '';
+                                                                                                                    document.body.innerHTML += 'You arrived safely to the bunker as you enter the bunker you see that Joe tried to call you while driving.';
+                                                                                                                    document.body.innerHTML += '<p>You decide to call him back...</p>';
+                                                                                                                    
+                                                                                                                        document.body.innerHTML += '<p><b>You:</b>Yo I was driving what\'s up?</p>';
+                                                                                                                        document.body.innerHTML += '<p><b>Joe:</b>Man i just gathered all of our friends in my bunker are you safe?</p>';
+
+                                                                                                                            document.body.innerHTML += '<p><b>You:</b>Yeah I went to pick up my girlfriend and just arrived in my bunker.</p>';
+                                                                                                                            document.body.innerHTML += '<p><b>Joe:</b>Send me your coordinates I will send a team to come and retreive you as soon it\'s over!</p>';
+                                                                                                                            document.body.innerHTML += '<p><b>You:</b>Okay I\'ll send it to you! Bye!</p>';
+                                                                                                                            document.body.innerHTML += '<p><b>Joe:</b>Bye!<p>';
+                                                                                                                    
+                                                                                                                    
+                                                                                                                        
+                                                                                                                        document.body.innerHTML += '<h1>Congratualations you completed the game!</h1>';
+                                                                                                                        //GAME SUCCESS
+                                                                                                                    
+                                                                                                                });
+                                                                                                                document.body.appendChild(answerButton);
+
+
+                                                                                                            });
+                                                                                                            document.body.appendChild(choiceButton1);
+                                                                                                            var choiceButton2 = document.createElement('button');
+                                                                                                            choiceButton2.innerHTML = 'Get in the car';
+                                                                                                            choiceButton2.addEventListener('click', function () {
+                                                                                                                document.body.innerHTML = '';
+                                                                                                                document.body.innerHTML += '<p>The radiation caught up to you</p>';
+                                                                                                                document.body.innerHTML += '<p>Unfortunately you didn\'t have enough time time to run away.</p>';
+                                                                                                                document.body.innerHTML += '<p>Try again.</p>'
+                                                                                                                document.body.style.backgroundColor = 'red';
+                                                                                                                // Create Restart Button
+                                                                                                                var restartButton = document.createElement('button');
+                                                                                                                restartButton.innerHTML = 'Exit';
+                                                                                                                restartButton.addEventListener('click', function () {
+                                                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                                                });
+
+                                                                                                                document.body.appendChild(restartButton);
+                                                                                                            });
+                                                                                                            document.body.appendChild(choiceButton2);
+                                                                                                            //
+
+
+
+                                                                                                        }, 5000);
+
+                                                                                                    }, 2000);
+
+
+                                                                                                });
+
+                                                                                                var takeAnythingElseButton = document.createElement('button');
+                                                                                                takeAnythingElseButton.innerHTML = 'Go to friend\'s house';
+                                                                                                takeAnythingElseButton.addEventListener('click', function () {
+                                                                                                    document.body.innerHTML = '';
+                                                                                                    document.body.innerHTML += '<p>You chose to go to your friend\'s house.</p>';
+                                                                                                    setTimeout(function () {
+                                                                                                        document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
+                                                                                                        document.body.innerHTML += '<p>He doesn\'t answer </p>';
+                                                                                                    }, 2000);
+                                                                                                });
+
+                                                                                                document.body.appendChild(goSomewhereElseButton);
+                                                                                                document.body.appendChild(takeAnythingElseButton);
+
+                                                                                            }, 2000);
+
+                                                                                        });
+                                                                                        document.body.appendChild(button2);
+
+
+                                                                                    }, 3000);
+                                                                                }, 2000);
+                                                                            }
+                                                                        });
+                                                                        document.body.appendChild(additionalButton);
+
+                                                                    });
+
+
+                                                                    document.body.appendChild(goSomewhereElseButton);
+
+
                                                                 });
-                                                                document.body.appendChild(additionalButton);
-
+                                                                document.body.appendChild(takeAnythingElseButton);
                                                             });
-
-
-                                                            document.body.appendChild(goSomewhereElseButton);
-
+                                                            document.body.appendChild(drugButton);
 
                                                         });
-                                                        document.body.appendChild(takeAnythingElseButton);
-                                                    });
-                                                    document.body.appendChild(drugButton);
 
-                                                });
+                                                    }//
+                                                    if (choice === 'the white house') {
+                                                        document.body.innerHTML += '<p>As you walk to the white house...</p>';
 
-                                            }//
-                                            if (choice === 'the white house') {
-                                                document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                            
-                                                var intervalId;
-                                                var isBlue = true;
-                                                var toggleCount = 0;
-                            
-                                                function toggleSiren() {
-                                                    if (isBlue) {
-                                                        document.body.style.backgroundColor = 'red';
-                                                        isBlue = false;
-                                                    } else {
-                                                        document.body.style.backgroundColor = 'blue';
-                                                        isBlue = true;
+                                                        var intervalId;
+                                                        var isBlue = true;
+                                                        var toggleCount = 0;
+
+                                                        function toggleSiren() {
+                                                            if (isBlue) {
+                                                                document.body.style.backgroundColor = 'red';
+                                                                isBlue = false;
+                                                            } else {
+                                                                document.body.style.backgroundColor = 'blue';
+                                                                isBlue = true;
+                                                            }
+
+                                                            toggleCount++;
+                                                            if (toggleCount === 4) {
+                                                                clearInterval(intervalId);
+                                                            }
+                                                        }
+
+                                                        intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
+
+                                                        intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
+
+                                                        setTimeout(function () {
+
+                                                            document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
+                                                            document.body.style.backgroundColor = 'red';
+                                                        }, 6000); //7 seconds
+
+                                                        setTimeout(function () {
+                                                            // Exit the game button
+                                                            const exitButton = document.createElement('button');
+                                                            exitButton.textContent = 'Exit Game';
+                                                            exitButton.addEventListener('click', function () {
+                                                                document.location.reload();
+                                                            });
+                                                            document.body.appendChild(exitButton);
+                                                        }, 9000); //7 seconds
+
                                                     }
-                            
-                                                    toggleCount++;
-                                                    if (toggleCount === 4) {
-                                                        clearInterval(intervalId);
-                                                    }
-                                                }
-                            
-                                                intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
-                            
-                                                intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
-                                                
-                                                setTimeout(function () {
-                                                    
-                                                    document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
-                                                    document.body.style.backgroundColor = 'red';
-                                                }, 6000); //7 seconds
-                            
-                                                setTimeout(function () {
-                                                // Exit the game button
-                                                const exitButton = document.createElement('button');
-                                                exitButton.textContent = 'Exit Game';
-                                                exitButton.addEventListener('click', function() {
-                                                    document.location.reload();
                                                 });
-                                                document.body.appendChild(exitButton);
-                                                }, 9000); //7 seconds
-                            
-                                            }
-                                        });
-                                        document.body.appendChild(button);
-                                    });
+                                                document.body.appendChild(button);
+                                            });
                                         });
 
                                         document.body.appendChild(simpleButton);
-                                        
-                                        
+
+
 
                                     });
-                                    
+
                                     document.body.appendChild(additionalButton);
 
                                 });
-// Leave button grocery1
+                                // Leave button grocery1
                                 var simpleButton = document.createElement('button');
                                 simpleButton.innerHTML = 'Leave the store';
 
@@ -450,11 +505,11 @@ window.onload = function () {
                                             }//
                                             if (choice === 'the white house') {
                                                 document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                            
+
                                                 var intervalId;
                                                 var isBlue = true;
                                                 var toggleCount = 0;
-                            
+
                                                 function toggleSiren() {
                                                     if (isBlue) {
                                                         document.body.style.backgroundColor = 'red';
@@ -463,33 +518,33 @@ window.onload = function () {
                                                         document.body.style.backgroundColor = 'blue';
                                                         isBlue = true;
                                                     }
-                            
+
                                                     toggleCount++;
                                                     if (toggleCount === 4) {
                                                         clearInterval(intervalId);
                                                     }
                                                 }
-                            
+
                                                 intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
-                            
+
                                                 intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
-                                                
+
                                                 setTimeout(function () {
-                                                    
+
                                                     document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
                                                     document.body.style.backgroundColor = 'red';
                                                 }, 6000); //7 seconds
-                            
+
                                                 setTimeout(function () {
-                                                // Exit the game button
-                                                const exitButton = document.createElement('button');
-                                                exitButton.textContent = 'Exit Game';
-                                                exitButton.addEventListener('click', function() {
-                                                    document.location.reload();
-                                                });
-                                                document.body.appendChild(exitButton);
+                                                    // Exit the game button
+                                                    const exitButton = document.createElement('button');
+                                                    exitButton.textContent = 'Exit Game';
+                                                    exitButton.addEventListener('click', function () {
+                                                        document.location.reload();
+                                                    });
+                                                    document.body.appendChild(exitButton);
                                                 }, 9000); //7 seconds
-                            
+
                                             }
                                         });
                                         document.body.appendChild(button);
@@ -501,11 +556,11 @@ window.onload = function () {
                             });
 
 
-                            
+
 
                             document.body.appendChild(takeAnythingElseButton);
-                            
-//Leave button grocery 2
+
+                            //Leave button grocery 2
                             var simpleButton = document.createElement('button');
                             simpleButton.innerHTML = 'Leave the store';
 
@@ -611,11 +666,11 @@ window.onload = function () {
                                         }//
                                         if (choice === 'the white house') {
                                             document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                        
+
                                             var intervalId;
                                             var isBlue = true;
                                             var toggleCount = 0;
-                        
+
                                             function toggleSiren() {
                                                 if (isBlue) {
                                                     document.body.style.backgroundColor = 'red';
@@ -624,33 +679,33 @@ window.onload = function () {
                                                     document.body.style.backgroundColor = 'blue';
                                                     isBlue = true;
                                                 }
-                        
+
                                                 toggleCount++;
                                                 if (toggleCount === 4) {
                                                     clearInterval(intervalId);
                                                 }
                                             }
-                        
+
                                             intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
-                        
+
                                             intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
-                                            
+
                                             setTimeout(function () {
-                                                
+
                                                 document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
                                                 document.body.style.backgroundColor = 'red';
                                             }, 6000); //7 seconds
-                        
+
                                             setTimeout(function () {
-                                            // Exit the game button
-                                            const exitButton = document.createElement('button');
-                                            exitButton.textContent = 'Exit Game';
-                                            exitButton.addEventListener('click', function() {
-                                                document.location.reload();
-                                            });
-                                            document.body.appendChild(exitButton);
+                                                // Exit the game button
+                                                const exitButton = document.createElement('button');
+                                                exitButton.textContent = 'Exit Game';
+                                                exitButton.addEventListener('click', function () {
+                                                    document.location.reload();
+                                                });
+                                                document.body.appendChild(exitButton);
                                             }, 9000); //7 seconds
-                        
+
                                         }
                                     });
                                     document.body.appendChild(button);
@@ -661,14 +716,14 @@ window.onload = function () {
                             document.body.appendChild(simpleButton);
                         });
 
-                        
+
                         document.body.appendChild(groceryButton);
 
                     });
-                    
+
                 }
 
-// what to take weapon store--
+                // what to take weapon store--
                 if (choice === 'weapon store') {
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var weaponChoices = ['knife', 'grenade', 'gun'];
@@ -698,7 +753,7 @@ window.onload = function () {
                                     });
 
                                     document.body.appendChild(additionalButton);
-    // Leave button weapon1
+                                    // Leave button weapon1
                                 });
                                 var simpleButton = document.createElement('button');
                                 simpleButton.innerHTML = 'Leave the store';
@@ -744,7 +799,7 @@ window.onload = function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                     document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-//Leave weapon3 here:
+                                                                    //Leave weapon3 here:
                                                                 });
                                                                 document.body.appendChild(additionalButton);
                                                             });
@@ -806,11 +861,11 @@ window.onload = function () {
                                             }//
                                             if (choice === 'the white house') {
                                                 document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                            
+
                                                 var intervalId;
                                                 var isBlue = true;
                                                 var toggleCount = 0;
-                            
+
                                                 function toggleSiren() {
                                                     if (isBlue) {
                                                         document.body.style.backgroundColor = 'red';
@@ -819,35 +874,35 @@ window.onload = function () {
                                                         document.body.style.backgroundColor = 'blue';
                                                         isBlue = true;
                                                     }
-                            
+
                                                     toggleCount++;
                                                     if (toggleCount === 4) {
                                                         clearInterval(intervalId);
                                                     }
                                                 }
-                            
+
                                                 intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
-                            
+
                                                 intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
-                                                
+
                                                 setTimeout(function () {
-                                                    
+
                                                     document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
                                                     document.body.style.backgroundColor = 'red';
                                                 }, 6000); //7 seconds
-                            
+
                                                 setTimeout(function () {
-                                                // Exit the game button
-                                                const exitButton = document.createElement('button');
-                                                exitButton.textContent = 'Exit Game';
-                                                exitButton.addEventListener('click', function() {
-                                                    document.location.reload();
-                                                });
-                                                document.body.appendChild(exitButton);
+                                                    // Exit the game button
+                                                    const exitButton = document.createElement('button');
+                                                    exitButton.textContent = 'Exit Game';
+                                                    exitButton.addEventListener('click', function () {
+                                                        document.location.reload();
+                                                    });
+                                                    document.body.appendChild(exitButton);
                                                 }, 9000); //7 seconds
-                            
+
                                             }
-                                            }
+                                        }
                                         );
                                         document.body.appendChild(button);
                                     });
@@ -865,7 +920,7 @@ window.onload = function () {
                             });
                             document.body.appendChild(takeAnythingElseButton);
                             //return button should be here
-// Leave button weapon2
+                            // Leave button weapon2
                             var simpleButton = document.createElement('button');
                             simpleButton.innerHTML = 'Leave the store';
 
@@ -971,11 +1026,11 @@ window.onload = function () {
                                         }//
                                         if (choice === 'the white house') {
                                             document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                        
+
                                             var intervalId;
                                             var isBlue = true;
                                             var toggleCount = 0;
-                        
+
                                             function toggleSiren() {
                                                 if (isBlue) {
                                                     document.body.style.backgroundColor = 'red';
@@ -984,33 +1039,33 @@ window.onload = function () {
                                                     document.body.style.backgroundColor = 'blue';
                                                     isBlue = true;
                                                 }
-                        
+
                                                 toggleCount++;
                                                 if (toggleCount === 4) {
                                                     clearInterval(intervalId);
                                                 }
                                             }
-                        
+
                                             intervalId = setInterval(toggleSiren, 1000); // Toggle every 1 second
-                        
+
                                             intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
-                                            
+
                                             setTimeout(function () {
-                                                
+
                                                 document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
                                                 document.body.style.backgroundColor = 'red';
                                             }, 6000); //7 seconds
-                        
+
                                             setTimeout(function () {
-                                            // Exit the game button
-                                            const exitButton = document.createElement('button');
-                                            exitButton.textContent = 'Exit Game';
-                                            exitButton.addEventListener('click', function() {
-                                                document.location.reload();
-                                            });
-                                            document.body.appendChild(exitButton);
+                                                // Exit the game button
+                                                const exitButton = document.createElement('button');
+                                                exitButton.textContent = 'Exit Game';
+                                                exitButton.addEventListener('click', function () {
+                                                    document.location.reload();
+                                                });
+                                                document.body.appendChild(exitButton);
                                             }, 9000); //7 seconds
-                        
+
                                         }
                                     });
                                     document.body.appendChild(button);
@@ -1022,14 +1077,14 @@ window.onload = function () {
 
 
 
-                    
-                    document.body.appendChild(weaponButton);
+
+                        document.body.appendChild(weaponButton);
                     });
                 }
 
 
 
-//What to take in drug store--
+                //What to take in drug store--
                 if (choice === 'drug store') {
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
@@ -1434,7 +1489,7 @@ window.onload = function () {
                 //what happens in white house
                 if (choice === 'the white house') {
                     document.body.innerHTML += '<p>As you walk to the white house...</p>';
-                    
+
                     var intervalId;
                     var isBlue = true;
                     var toggleCount = 0;
@@ -1459,19 +1514,19 @@ window.onload = function () {
                     intervalId = setInterval(toggleSiren, 500); // Toggle every 500 milliseconds
 
                     setTimeout(function () {
-                        
+
                         document.body.innerHTML += '<p><b>Unfortunately, you were caught by the guards and got Shot.</b></p>';
                         document.body.style.backgroundColor = 'red';
                     }, 6000); //7 seconds
 
                     setTimeout(function () {
-                    // Exit the game button
-                    const exitButton = document.createElement('button');
-                    exitButton.textContent = 'Exit Game';
-                    exitButton.addEventListener('click', function() {
-                        document.location.reload();
-                    });
-                    document.body.appendChild(exitButton);
+                        // Exit the game button
+                        const exitButton = document.createElement('button');
+                        exitButton.textContent = 'Exit Game';
+                        exitButton.addEventListener('click', function () {
+                            document.location.reload();
+                        });
+                        document.body.appendChild(exitButton);
                     }, 9000); //7 seconds
 
                 }
@@ -1482,7 +1537,7 @@ window.onload = function () {
 
 
             });
-            
+
             document.body.appendChild(button);
 
 
@@ -1491,10 +1546,10 @@ window.onload = function () {
 
 
         });
-        
+
     });
 
-    
+
 
     document.getElementById('phone').addEventListener('click', function () {
         document.body.innerHTML = '';
@@ -1608,9 +1663,9 @@ window.onload = function () {
                                     document.body.innerHTML += '<p><b>Joe:</b> <j>Goodbye!</j></p>';
                                     setTimeout(function () {
                                         location.reload();
-                                    } , 5000);
+                                    }, 5000);
                                 });
-                                document.getElementById('F-joe2').addEventListener('click', function () {  
+                                document.getElementById('F-joe2').addEventListener('click', function () {
                                     document.body.innerHTML = '';
                                     document.body.innerHTML += '<h1>Joe</h1>'
                                     document.body.innerHTML += '<p><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
@@ -1618,10 +1673,10 @@ window.onload = function () {
                                     document.body.innerHTML += '<p><b>Joe:</b> <j>Goodbye!</j></p>';
                                     setTimeout(function () {
                                         location.reload();
-                                    } , 5000);
+                                    }, 5000);
                                 });
 
-                                
+
                                 // Additional code for handling sending a helicopter
                             });
 
@@ -1696,28 +1751,28 @@ window.onload = function () {
                     if (person === 'Freddy') {
                         document.body.innerHTML += '<p><b>You:</b> Hello?</p>';
                         // Play sound for Freddy
-                                var audio = new Audio('mp3/ I want to break free Sound .mp3');
-                                audio.play();
-                                document.body.innerHTML += '<img src="img/Freddy.png" alt="Freddy" style="width: 250px">';
-                                // Typing animation effect  for Freddy
-                                var textElements = document.querySelectorAll('f');
-                                textElements.forEach(function (element) {
-                                    var text = element.innerHTML;
-                                    element.innerHTML = '';
-                                    var i = 0;
-                                    var speed = 35; // Adjust the typing speed here (in milliseconds)
+                        var audio = new Audio('mp3/ I want to break free Sound .mp3');
+                        audio.play();
+                        document.body.innerHTML += '<img src="img/Freddy.png" alt="Freddy" style="width: 250px">';
+                        // Typing animation effect  for Freddy
+                        var textElements = document.querySelectorAll('f');
+                        textElements.forEach(function (element) {
+                            var text = element.innerHTML;
+                            element.innerHTML = '';
+                            var i = 0;
+                            var speed = 35; // Adjust the typing speed here (in milliseconds)
 
-                                    function typeWriter() {
-                                        if (i < text.length) {
-                                            element.innerHTML += text.charAt(i);
-                                            i++;
-                                            setTimeout(typeWriter, speed);
-                                        }
-                                    }
+                            function typeWriter() {
+                                if (i < text.length) {
+                                    element.innerHTML += text.charAt(i);
+                                    i++;
+                                    setTimeout(typeWriter, speed);
+                                }
+                            }
 
-                                    typeWriter();
-                                    // Start the typing animation
-                                });
+                            typeWriter();
+                            // Start the typing animation
+                        });
                         document.body.innerHTML += '<p><b>Freddy:</b> <f>I want to break free!</f></p>';
                     }
                     if (person === 'Brother') {
@@ -1759,9 +1814,9 @@ window.onload = function () {
         var button2 = document.createElement('button');
         button2.innerHTML = 'Watch a tutorial on how to survive';
         button2.addEventListener('click', function () {
-        var videoUrl = "https://www.youtube.com/watch?v=Tvyx-1IpU58";
-        window.location.href = videoUrl;
-            
+            var videoUrl = "https://www.youtube.com/watch?v=Tvyx-1IpU58";
+            window.location.href = videoUrl;
+
         });
         document.body.appendChild(button2);
     });
