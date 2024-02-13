@@ -1,4 +1,5 @@
 window.onload = function () {
+    
     var inventory = []; // Declare and initialize the inventory array
 
     var startTime = Date.now(); // Get the current time
@@ -40,6 +41,7 @@ window.onload = function () {
 
     document.getElementById('run').addEventListener('click', function () {
         document.body.innerHTML = '';
+        
         document.body.innerHTML += '<h1>Where will you run?</h1>';
         var choices = ['grocery store', 'weapon store', 'drug store', 'the white house'];
 
@@ -597,21 +599,21 @@ window.onload = function () {
                                                     }
                                                     if (choice === 'drug store') {
                                                         document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                                        // Create a box element
+                                                        var box = document.createElement('div');
+                                                        box.style.width = '400px';
+                                                        box.style.height = '550px';
+                                                        box.style.backgroundColor = 'black';
+                                                        box.style.position = 'absolute';
+                                                        box.style.top = '50%';
+                                                        box.style.left = '50%';
+                                                        box.style.transform = 'translate(-50%, -50%)';
+                                                        box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                        box.style.borderRadius = '10px';
+                                                        box.style.zIndex = '-1'; // Send the box to the back
+
+                                                        // Append the box to the body
+                                                        document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
                                                         drugChoices.forEach(function (drugChoice) {
@@ -1348,21 +1350,21 @@ window.onload = function () {
                                             }
                                             if (choice === 'drug store') {
                                                 document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                                 drugChoices.forEach(function (drugChoice) {
@@ -1766,21 +1768,21 @@ window.onload = function () {
                                         }
                                         if (choice === 'drug store') {
                                             document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -2645,21 +2647,21 @@ window.onload = function () {
                                                     }
                                                     if (choice === 'drug store') {
                                                         document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                                        // Create a box element
+                                                        var box = document.createElement('div');
+                                                        box.style.width = '400px';
+                                                        box.style.height = '550px';
+                                                        box.style.backgroundColor = 'black';
+                                                        box.style.position = 'absolute';
+                                                        box.style.top = '50%';
+                                                        box.style.left = '50%';
+                                                        box.style.transform = 'translate(-50%, -50%)';
+                                                        box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                        box.style.borderRadius = '10px';
+                                                        box.style.zIndex = '-1'; // Send the box to the back
+
+                                                        // Append the box to the body
+                                                        document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
                                                         drugChoices.forEach(function (drugChoice) {
@@ -3662,21 +3664,21 @@ window.onload = function () {
                                         }
                                         if (choice === 'drug store') {
                                             document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -3793,7 +3795,7 @@ window.onload = function () {
                     box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
                     box.style.borderRadius = '10px';
                     box.style.zIndex = '-1'; // Send the box to the back
-                    
+
                     // Append the box to the body
                     document.body.appendChild(box);
                     document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -4881,21 +4883,21 @@ window.onload = function () {
                                         }
                                         if (choice === 'drug store') {
                                             document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -5014,21 +5016,21 @@ window.onload = function () {
                                                             }
                                                             if (choice === 'drug store') {
                                                                 document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
-                    // Create a box element
-                    var box = document.createElement('div');
-                    box.style.width = '400px';
-                    box.style.height = '550px';
-                    box.style.backgroundColor = 'black';
-                    box.style.position = 'absolute';
-                    box.style.top = '50%';
-                    box.style.left = '50%';
-                    box.style.transform = 'translate(-50%, -50%)';
-                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
-                    box.style.borderRadius = '10px';
-                    box.style.zIndex = '-1'; // Send the box to the back
-                    
-                    // Append the box to the body
-                    document.body.appendChild(box);
+                                                                // Create a box element
+                                                                var box = document.createElement('div');
+                                                                box.style.width = '400px';
+                                                                box.style.height = '550px';
+                                                                box.style.backgroundColor = 'black';
+                                                                box.style.position = 'absolute';
+                                                                box.style.top = '50%';
+                                                                box.style.left = '50%';
+                                                                box.style.transform = 'translate(-50%, -50%)';
+                                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                                box.style.borderRadius = '10px';
+                                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                                // Append the box to the body
+                                                                document.body.appendChild(box);
                                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                                 var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                                                 drugChoices.forEach(function (drugChoice) {
@@ -5175,17 +5177,48 @@ window.onload = function () {
 
 
     document.getElementById('phone').addEventListener('click', function () {
+        
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>What do you want to do?</h1>';
-        document.body.innerHTML += '<img src="Img/phone.png" alt="Image" style="width: 250px">';
+        document.body.innerHTML += '<img src="Img/Phone.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '450px';
+                    box.style.height = '250px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
         // Create buttons for the player's choices
         var button1 = document.createElement('button');
         button1.innerHTML = 'Call someone';
 
         button1.addEventListener('click', function () {
             document.body.innerHTML = '';
+            document.body.innerHTML += '<img src="Img/Calling.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+            // Create a box element
+            var box = document.createElement('div');
+            box.style.width = '380px';
+            box.style.height = '380px';
+            box.style.backgroundColor = 'black';
+            box.style.position = 'absolute';
+            box.style.top = '50%';
+            box.style.left = '50%';
+            box.style.transform = 'translate(-50%, -50%)';
+            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+            box.style.borderRadius = '10px';
+            box.style.zIndex = '-1'; // Send the box to the back
+            
+            // Append the box to the body
+            document.body.appendChild(box);
             document.body.innerHTML += '<h1>Who will you call?</h1>';
-            document.body.innerHTML += '<img src="img/Calling.png" alt="Calling" style="width: 250px">';
             var choices = ['Joe', 'Mama', 'Freddy', 'Brother'];
             function choice(person) {
                 var button = document.createElement('button');
@@ -5194,7 +5227,7 @@ window.onload = function () {
                     document.body.innerHTML = '';
                     document.body.innerHTML += '<h1>You chose to call: ' + person + '</h1>';
                     if (person === 'Joe') {
-                        document.body.innerHTML += '<p><b>Joe:</b> <f>Hey! What can I do for you?</f></p>';
+                        document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> <f>Hey! What can I do for you?</f></p>';
                         // Player's possible responses to Joe
                         document.body.innerHTML += '<button id="Help-me-survive">I need your help!</button>';
                         document.body.innerHTML += '<button id="responseToJoe">Can I come to the White House bunker?</button>';
@@ -5202,9 +5235,9 @@ window.onload = function () {
                             // Code to run when the "Help-me-survive" button is clicked
                             document.body.innerHTML = '';
                             document.body.innerHTML += '<h1>Joe</h1>'
-                            document.body.innerHTML += '<p><b>Joe:</b> Hey! What can I do for you?</p>';
+                            document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Hey! What can I do for you?</p>';
                             document.body.innerHTML += '<p><b>You:</b> I need your help.</p>';
-                            document.body.innerHTML += '<p><b>Joe:</b> <j>Yeah for sure, tell me what you need.</j></p>';
+                            document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> <j>Yeah for sure, tell me what you need.</j></p>';
 
                             // Create buttons for the player's choices
                             var button1 = document.createElement('button');
@@ -5213,12 +5246,12 @@ window.onload = function () {
                                 // Code to run when the "Ask Joe to pick up family" button is clicked
                                 document.body.innerHTML = '';
                                 document.body.innerHTML += '<h1>Joe</h1>'
-                                document.body.innerHTML += '<p><b>Joe:</b> Hey! What can I do for you?</p>';
+                                document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Hey! What can I do for you?</p>';
                                 document.body.innerHTML += '<p><b>You:</b> I need your help.</p>';
-                                document.body.innerHTML += '<p><b>Joe:</b> Yeah for sure, tell me what you need.</p>';
+                                document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Yeah for sure, tell me what you need.</p>';
                                 document.body.innerHTML += '<p><b>You:</b> Man I\'m worried for my family, can you do something to get them to a safe place?</p>'
                                 setTimeout(function () {
-                                    document.body.innerHTML += '<p><b>Joe:</b> <j>Sure, I will send a troop to go and pick up your family.</j></p>';
+                                    document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> <j>Sure, I will send a troop to go and pick up your family.</j></p>';
                                     var textElements = document.querySelectorAll('j');
 
                                     // Add CSS styling to the 'strong' class
@@ -5265,7 +5298,7 @@ window.onload = function () {
                                 // Code to run when the "Ask Joe to pick up friends" button is clicked
                                 document.body.innerHTML = '';
                                 document.body.innerHTML += '<h1>Joe</h1>'
-                                document.body.innerHTML += '<p><b>Joe:</b> Alright, I will go and pick up your friends.</p>';
+                                document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Alright, I will go and pick up your friends.</p>';
                                 // Additional code for handling Joe picking up friends
                             });
 
@@ -5275,15 +5308,15 @@ window.onload = function () {
                                 // Code to run when the "Send a helicopter to save yourself" button is clicked
                                 document.body.innerHTML = '';
                                 document.body.innerHTML += '<h1>Joe</h1>'
-                                document.body.innerHTML += '<p><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
+                                document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
                                 document.body.innerHTML += '<button id="F-joe">Tell joe to go F@ck himself.</button>'
                                 document.body.innerHTML += '<button id="F-joe2">Wish him well.</button>'
                                 document.getElementById('F-joe').addEventListener('click', function () {
                                     document.body.innerHTML = '';
                                     document.body.innerHTML += '<h1>Joe</h1>'
-                                    document.body.innerHTML += '<p><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
+                                    document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
                                     document.body.innerHTML += '<p><b>You:</b> x@xx you Joe!</p>';
-                                    document.body.innerHTML += '<p><b>Joe:</b> <j>Goodbye!</j></p>';
+                                    document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> <j>Goodbye!</j></p>';
                                     setTimeout(function () {
                                         location.reload();
                                     }, 5000);
@@ -5291,9 +5324,9 @@ window.onload = function () {
                                 document.getElementById('F-joe2').addEventListener('click', function () {
                                     document.body.innerHTML = '';
                                     document.body.innerHTML += '<h1>Joe</h1>'
-                                    document.body.innerHTML += '<p><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
+                                    document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> Sorry, I can\'t arrange a helicopter. You\'re on your own.</p>';
                                     document.body.innerHTML += '<p><b>You:</b> Goodbye Joe, take care.</p>';
-                                    document.body.innerHTML += '<p><b>Joe:</b> <j>Goodbye!</j></p>';
+                                    document.body.innerHTML += '<p style="color: #498c4c;"><b>Joe:</b> <j>Goodbye!</j></p>';
                                     setTimeout(function () {
                                         location.reload();
                                     }, 5000);

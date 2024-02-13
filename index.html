@@ -43,13 +43,35 @@
             color: white;
             /* Change the text color to white */
             background-color: black;
-
+            font-family: 'Courier New', Courier, monospace;
         }
+
+        .nc {
+            position: fixed;
+            z-index: -1;
+            filter: grayscale(100%) blur(8px);
+        }
+
+        
+        .box1 {
+            background-color: Black;
+            width: 900px;
+            height: 400px;
+            z-index: 2;
+            position: fixed;
+            opacity: 0.8;
+            border-radius: 10px;
+            animation: pulse 3s infinite;
+        }
+        
     </style>
 </head>
 
 <body>
-    <h1>Nuclear reactor at 30km from you exploded!</h1>
+        <img src="Img/nuclear-weapons_0_0_0.jpg" alt="nuclear" class="nc" style="width: 1000px; height: auto;">
+        <div class="box1">
+    
+    <h1 style="color:lightgrey;">Nuclear reactor at 30km from you exploded!</h1>
     <h2 style="color: grey;">You have approximately 10 minutes before being touched by the radiation...</h2>
     <br>
     <p>Choose what you will do first:</p>
@@ -57,7 +79,7 @@
 
     <button id="run" role="button" class="button">Run</button>
     <button id="phone" role="button" class="button">Phone</button>
-
+    </div>
     <script src="script.js"></script>
 
 

@@ -63,6 +63,8 @@ button {
   font-size: 18px;
   margin-bottom: 8px; /* Add a margin between buttons */
   margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 button:focus {
