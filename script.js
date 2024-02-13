@@ -37,7 +37,7 @@ window.onload = function () {
 
     darkenScreen(); // Start darkening the screen
 
-            
+
     document.getElementById('run').addEventListener('click', function () {
         document.body.innerHTML = '';
         document.body.innerHTML += '<h1>Where will you run?</h1>';
@@ -52,7 +52,23 @@ window.onload = function () {
                 document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                 // choice of what to take
                 if (choice === 'grocery store') {
-                    document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 250px; height: auto;">';
+                    document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+
+                    // Append the box to the body
+                    document.body.appendChild(box);
+
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                     groceryChoices.forEach(function (groceryChoice) {
@@ -98,6 +114,22 @@ window.onload = function () {
                                                     document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                     // choice of what to take
                                                     if (choice === 'Gun store') {
+                                                        document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                        // Create a box element
+                                                        var box = document.createElement('div');
+                                                        box.style.width = '400px';
+                                                        box.style.height = '550px';
+                                                        box.style.backgroundColor = 'black';
+                                                        box.style.position = 'absolute';
+                                                        box.style.top = '50%';
+                                                        box.style.left = '50%';
+                                                        box.style.transform = 'translate(-50%, -50%)';
+                                                        box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                        box.style.borderRadius = '10px';
+                                                        box.style.zIndex = '-1'; // Send the box to the back
+
+                                                        // Append the box to the body
+                                                        document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var groceryChoices = ['knife', 'grenade', 'gun'];
                                                         groceryChoices.forEach(function (groceryChoice) {
@@ -124,429 +156,429 @@ window.onload = function () {
                                                                             document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
-                                                                                document.body.innerHTML += '<h1>What will you do now?</h1>';
-                                                                                var button1 = document.createElement('button');
-                                                                                button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        if (inventory.includes('bread') && ('water')) {
-                                                                                            document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('flashlight')) {
-                                                                                            document.body.innerHTML += '<p>You died of thirst...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('rope')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && (' Raw meat')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-
-                                                                                        else if (inventory.includes('milk') && ('water')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('flashlight')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('rope')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('milk') && (' Raw meat')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-                                                                                        
-                                                                                        else if (inventory.includes(' Raw meat') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('eggs') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('Canned food') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
+                                                                            document.body.innerHTML += '<h1>What will you do now?</h1>';
+                                                                            var button1 = document.createElement('button');
+                                                                            button1.innerHTML = 'Go to bunker';
+                                                                            button1.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                if (inventory.includes('bread') && ('water')) {
+                                                                                    document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
                                                                                     });
-                                                                                    document.body.appendChild(button1);
-                                                                                    var button2 = document.createElement('button');
-                                                                                    button2.innerHTML = 'Go to white house';
-                                                                                    button2.addEventListener('click', function() {
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('flashlight')) {
+                                                                                    document.body.innerHTML += '<p>You died of thirst...</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('rope')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && (' Raw meat')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death!</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('Canned food') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                            });
+                                                                            document.body.appendChild(button1);
+                                                                            var button2 = document.createElement('button');
+                                                                            button2.innerHTML = 'Go to white house';
+                                                                            button2.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                                                document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                                setTimeout(function () {
+                                                                                    document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                                    answerButton.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                                        setTimeout(function() {
-                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
                                                                                             var answerButton = document.createElement('button');
                                                                                             document.body.appendChild(answerButton);
-                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                                            answerButton.addEventListener('click', function() {
+                                                                                            answerButton.innerHTML = 'Leave';
+                                                                                            answerButton.addEventListener('click', function () {
                                                                                                 document.body.innerHTML = '';
-                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                                setTimeout(function() {
-                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                                
-                                                                                            
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Fight with him';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                
-                                                                                                });
-                                                                                            },2000);
+                                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                                    document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                    document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                    document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
                                                                                             });
                                                                                             var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                        }, 3000);
+                                                                                            document.body.appendChild(answerButton);
+                                                                                            answerButton.innerHTML = 'Fight with him';
+                                                                                            answerButton.addEventListener('click', function () {
+                                                                                                document.body.innerHTML = '';
+                                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
 
+                                                                                            });
+                                                                                        }, 2000);
                                                                                     });
-                                                                                    document.body.appendChild(button2);
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Leave';
+                                                                                    answerButton.addEventListener('click', function () {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                            document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                            document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                            document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                            var restartButton = document.createElement('button');
+                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                            });
+                                                                                            document.body.appendChild(restartButton);
+                                                                                        }, 2000);
+                                                                                    });
+                                                                                }, 3000);
+
+                                                                            });
+                                                                            document.body.appendChild(button2);
                                                                         });
                                                                         document.body.appendChild(additionalButton);
                                                                     });
@@ -571,7 +603,7 @@ window.onload = function () {
                                                             drugButton.innerHTML = drugChoice;
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML ='';
+                                                                document.body.innerHTML = '';
                                                                 document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
@@ -681,20 +713,20 @@ window.onload = function () {
                                                                                                                     document.body.innerHTML = '';
                                                                                                                     document.body.innerHTML += 'You arrived safely to the bunker as you enter the bunker you see that Joe tried to call you while driving.';
                                                                                                                     document.body.innerHTML += '<p>You decide to call him back...</p>';
-                                                                                                                    
-                                                                                                                        document.body.innerHTML += '<p><b>You:</b>Yo I was driving what\'s up?</p>';
-                                                                                                                        document.body.innerHTML += '<p><b>Joe:</b>Man i just gathered all of our friends in my bunker are you safe?</p>';
 
-                                                                                                                            document.body.innerHTML += '<p><b>You:</b>Yeah I went to pick up my girlfriend and just arrived in my bunker.</p>';
-                                                                                                                            document.body.innerHTML += '<p><b>Joe:</b>Send me your coordinates I will send a team to come and retreive you as soon it\'s over!</p>';
-                                                                                                                            document.body.innerHTML += '<p><b>You:</b>Okay I\'ll send it to you! Bye!</p>';
-                                                                                                                            document.body.innerHTML += '<p><b>Joe:</b>Bye!<p>';
-                                                                                                                    
-                                                                                                                    
-                                                                                                                        
-                                                                                                                        document.body.innerHTML += '<h1>Congratualations you completed the game!</h1>';
-                                                                                                                        //GAME SUCCESS
-                                                                                                                    
+                                                                                                                    document.body.innerHTML += '<p><b>You:</b>Yo I was driving what\'s up?</p>';
+                                                                                                                    document.body.innerHTML += '<p><b>Joe:</b>Man i just gathered all of our friends in my bunker are you safe?</p>';
+
+                                                                                                                    document.body.innerHTML += '<p><b>You:</b>Yeah I went to pick up my girlfriend and just arrived in my bunker.</p>';
+                                                                                                                    document.body.innerHTML += '<p><b>Joe:</b>Send me your coordinates I will send a team to come and retreive you as soon it\'s over!</p>';
+                                                                                                                    document.body.innerHTML += '<p><b>You:</b>Okay I\'ll send it to you! Bye!</p>';
+                                                                                                                    document.body.innerHTML += '<p><b>Joe:</b>Bye!<p>';
+
+
+
+                                                                                                                    document.body.innerHTML += '<h1>Congratualations you completed the game!</h1>';
+                                                                                                                    //GAME SUCCESS
+
                                                                                                                 });
                                                                                                                 document.body.appendChild(answerButton);
 
@@ -738,47 +770,47 @@ window.onload = function () {
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
-                                                                                                                var choiceButton1 = document.createElement('button');
-                                                                                                                choiceButton1.innerHTML = 'Go to girlfriends house';
-                                                                                                                choiceButton1.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
-                                                                                                                    setTimeout(function () {
-                                                                                                                        document.body.innerHTML += '<p>As you drive to her place</p>';
-                                                                                                                        document.body.innerHTML += '<p>You get caught up by the radiation</p>';
-                                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                                        var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-
-                                                                                                                    }, 2000);
+                                                                                                        var choiceButton1 = document.createElement('button');
+                                                                                                        choiceButton1.innerHTML = 'Go to girlfriends house';
+                                                                                                        choiceButton1.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
+                                                                                                            setTimeout(function () {
+                                                                                                                document.body.innerHTML += '<p>As you drive to her place</p>';
+                                                                                                                document.body.innerHTML += '<p>You get caught up by the radiation</p>';
+                                                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                                document.body.style.backgroundColor = 'red';
+                                                                                                                var restartButton = document.createElement('button');
+                                                                                                                restartButton.innerHTML = 'Exit';
+                                                                                                                restartButton.addEventListener('click', function () {
+                                                                                                                    location.reload(); // Reload the page to restart the file
                                                                                                                 });
-                                                                                                                document.body.appendChild(choiceButton1);
+                                                                                                                document.body.appendChild(restartButton);
 
-                                                                                                                var choiceButton2 = document.createElement('button');
-                                                                                                                choiceButton2.innerHTML = 'Get in the car';
-                                                                                                                choiceButton2.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>The radiation caught up to you.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
-                                                                                                                    document.body.style.backgroundColor = 'red';
-                                                                                                                    // Create Restart Button
-                                                                                                                    var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-                                                                                                                });
-                                                                                                                document.body.appendChild(choiceButton2); 
-                                                                                                        
+                                                                                                            }, 2000);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton1);
+
+                                                                                                        var choiceButton2 = document.createElement('button');
+                                                                                                        choiceButton2.innerHTML = 'Get in the car';
+                                                                                                        choiceButton2.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p>The radiation caught up to you.</p>';
+                                                                                                            document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
+                                                                                                            document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                                            // Create Restart Button
+                                                                                                            var restartButton = document.createElement('button');
+                                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                                            });
+                                                                                                            document.body.appendChild(restartButton);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton2);
+
                                                                                                     }, 2000);
                                                                                                 });
 
@@ -799,350 +831,350 @@ window.onload = function () {
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
                                                                                 var button1 = document.createElement('button');
                                                                                 button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
+                                                                                button1.addEventListener('click', function () {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                    if (inventory.includes('bread') && ('water')) {
+                                                                                        document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && ('flashlight')) {
+                                                                                        document.body.innerHTML += '<p>You died of thirst...</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && ('rope')) {
+                                                                                        document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && (' Raw meat')) {
+                                                                                        document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+
+                                                                                    else if (inventory.includes('milk') && ('water')) {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        if (inventory.includes('bread') && ('water')) {
-                                                                                            document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('flashlight')) {
-                                                                                            document.body.innerHTML += '<p>You died of thirst...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('rope')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && (' Raw meat')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death!</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('water')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('flashlight')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('rope')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('milk') && (' Raw meat')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-                                                                                        
-                                                                                        else if (inventory.includes(' Raw meat') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('eggs') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('Canned food') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('Canned food') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('Canned food') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('Canned food') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('Canned food') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('Canned food') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('fresh fruits') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('fresh fruits') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                    });
-                                                                                
+                                                                                    else if (inventory.includes('fresh fruits') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+
+                                                                                    else if (inventory.includes('fresh fruits') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+
+                                                                                });
+
                                                                                 document.body.appendChild(button1);
-                                                                            
+
                                                                                 var button2 = document.createElement('button');
                                                                                 button2.innerHTML = 'Phone';
                                                                                 document.body.appendChild(button2);
-                                                                                
-                                                                            }    
+
+                                                                            }
 
                                                                         });
                                                                         document.body.appendChild(additionalButton);
@@ -1239,6 +1271,22 @@ window.onload = function () {
                                             document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'Gun store') {
+                                                document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var groceryChoices = ['knife', 'grenade', 'gun'];
                                                 groceryChoices.forEach(function (groceryChoice) {
@@ -1264,7 +1312,7 @@ window.onload = function () {
                                                                     document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
-//needs to be completed
+                                                                    //needs to be completed
 
                                                                 });
                                                                 document.body.appendChild(additionalButton);
@@ -1306,7 +1354,7 @@ window.onload = function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                     document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
-//Needs to be completed
+                                                                    //Needs to be completed
                                                                 });
                                                                 document.body.appendChild(additionalButton);
 
@@ -1402,6 +1450,22 @@ window.onload = function () {
                                         document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'Gun store') {
+                                            document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var groceryChoices = ['knife', 'grenade', 'gun'];
                                             groceryChoices.forEach(function (groceryChoice) {
@@ -1428,51 +1492,51 @@ window.onload = function () {
                                                                 document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
-                                                                    // Button to go to the bunker
-                                                                    var bunkerButton = document.createElement('button');
-                                                                    bunkerButton.innerHTML = 'Go to the bunker';
-                                                                    bunkerButton.addEventListener('click', function () {
-                                                                        document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
-                                                                        document.body.innerHTML += '<p>You died of starvation.</p>';
-                                                                        document.body.style.backgroundColor = 'red';
-                                                                        var restartButton = document.createElement('button');
-                                                                        restartButton.innerHTML = 'Exit';
-                                                                        restartButton.addEventListener('click', function () {
-                                                                            location.reload(); // Reload the page to restart the file
-                                                                        });
-                                                                        document.body.appendChild(restartButton);       
+                                                                // Button to go to the bunker
+                                                                var bunkerButton = document.createElement('button');
+                                                                bunkerButton.innerHTML = 'Go to the bunker';
+                                                                bunkerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
+                                                                    document.body.innerHTML += '<p>You died of starvation.</p>';
+                                                                    document.body.style.backgroundColor = 'red';
+                                                                    var restartButton = document.createElement('button');
+                                                                    restartButton.innerHTML = 'Exit';
+                                                                    restartButton.addEventListener('click', function () {
+                                                                        location.reload(); // Reload the page to restart the file
                                                                     });
-                                                                    document.body.appendChild(bunkerButton);
+                                                                    document.body.appendChild(restartButton);
+                                                                });
+                                                                document.body.appendChild(bunkerButton);
 
-                                                                    // Button to go to the white house
-                                                                    var whiteHouseButton = document.createElement('button');
-                                                                    whiteHouseButton.innerHTML = 'Go to the white house';
-                                                                    whiteHouseButton.addEventListener('click', function () {
-                                                                        document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
-                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                        setTimeout(function() {
-                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
-                                                                            var answerButton = document.createElement('button');
-                                                                            document.body.appendChild(answerButton);
-                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                            answerButton.addEventListener('click', function() {
-                                                                                document.body.innerHTML = '';
-                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                setTimeout(function() {
-                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                
-                                                                            
+                                                                // Button to go to the white house
+                                                                var whiteHouseButton = document.createElement('button');
+                                                                whiteHouseButton.innerHTML = 'Go to the white house';
+                                                                whiteHouseButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                                    document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                            document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
                                                                                 var answerButton = document.createElement('button');
                                                                                 document.body.appendChild(answerButton);
                                                                                 answerButton.innerHTML = 'Leave';
-                                                                                answerButton.addEventListener('click', function() {
+                                                                                answerButton.addEventListener('click', function () {
                                                                                     document.body.innerHTML = '';
                                                                                     document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                    setTimeout(function() {
+                                                                                    setTimeout(function () {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
                                                                                         document.body.innerHTML += '<p>You die a few minutes later.</p>';
@@ -1480,7 +1544,7 @@ window.onload = function () {
                                                                                         document.body.style.backgroundColor = 'red';
                                                                                         var restartButton = document.createElement('button');
                                                                                         restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
+                                                                                        restartButton.addEventListener('click', function () {
                                                                                             location.reload(); // Reload the page to restart the file
                                                                                         });
                                                                                         document.body.appendChild(restartButton);
@@ -1489,53 +1553,53 @@ window.onload = function () {
                                                                                 var answerButton = document.createElement('button');
                                                                                 document.body.appendChild(answerButton);
                                                                                 answerButton.innerHTML = 'Fight with him';
-                                                                                answerButton.addEventListener('click', function() {
+                                                                                answerButton.addEventListener('click', function () {
                                                                                     document.body.innerHTML = '';
                                                                                     document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
-                                                                                    setTimeout(function() {
+                                                                                    setTimeout(function () {
                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                         document.body.style.backgroundColor = 'red';
                                                                                         var restartButton = document.createElement('button');
                                                                                         restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
+                                                                                        restartButton.addEventListener('click', function () {
                                                                                             location.reload(); // Reload the page to restart the file
                                                                                         });
                                                                                         document.body.appendChild(restartButton);
                                                                                     }, 2000);
-                                                                                
-                                                                                });
-                                                                            },2000);
-                                                                            });
-                                                                            var answerButton = document.createElement('button');
-                                                                                document.body.appendChild(answerButton);
-                                                                                answerButton.innerHTML = 'Leave';
-                                                                                answerButton.addEventListener('click', function() {
-                                                                                    document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '< style="color: grey;"p>You decided to leave the area</p>';
-                                                                                    setTimeout(function() {
-                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                        var restartButton = document.createElement('button');
-                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
-                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                        });
-                                                                                        document.body.appendChild(restartButton);
-                                                                                    }, 2000);
-                                                                                });
-                                                                        }, 3000);
 
-                                                                    
-                                                                    
-                                                                        
-                                                                    }); 
-                                                                    document.body.appendChild(whiteHouseButton);
-                                                                
-                                                            
-                                                                
+                                                                                });
+                                                                            }, 2000);
+                                                                        });
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Leave';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '< style="color: grey;"p>You decided to leave the area</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+                                                                        });
+                                                                    }, 3000);
+
+
+
+
+                                                                });
+                                                                document.body.appendChild(whiteHouseButton);
+
+
+
 
                                                             });
                                                             document.body.appendChild(additionalButton);
@@ -1549,118 +1613,118 @@ window.onload = function () {
                                                     var leaveStoreButton = document.createElement('button');
                                                     document.body.appendChild(leaveStoreButton);
                                                     leaveStoreButton.innerHTML = 'Leave Store';
-                                                    leaveStoreButton.addEventListener('click', function() {
+                                                    leaveStoreButton.addEventListener('click', function () {
                                                         document.body.innerHTML = '';
                                                         document.body.innerHTML += '<p style="color: grey;">You decided to leave the store</p>';
                                                         document.body.innerHTML += '<h1>Where will you run now?</h1>';
-                                                            var bunkerButton = document.createElement('button');
-                                                            bunkerButton.innerHTML = 'Bunker';
-                                                            bunkerButton.addEventListener('click', function() {
-                                                                document.body.innerHTML = '';
-                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                setTimeout(function() {
-                                                                    document.body.innerHTML += '<p>You are safe in the bunker</p>';
-                                                                    document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
-                                                                    document.body.style.backgroundColor = 'red';
-                                                                    var restartButton = document.createElement('button');
-                                                                    restartButton.innerHTML = 'Exit';
-                                                                    restartButton.addEventListener('click', function() {
-                                                                        location.reload(); // Reload the page to restart the file
-                                                                    });
-                                                                    document.body.appendChild(restartButton);
-                                                                }, 2000);
-                                                            });
-                                                            document.body.appendChild(bunkerButton);
+                                                        var bunkerButton = document.createElement('button');
+                                                        bunkerButton.innerHTML = 'Bunker';
+                                                        bunkerButton.addEventListener('click', function () {
+                                                            document.body.innerHTML = '';
+                                                            document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                            setTimeout(function () {
+                                                                document.body.innerHTML += '<p>You are safe in the bunker</p>';
+                                                                document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
+                                                                document.body.style.backgroundColor = 'red';
+                                                                var restartButton = document.createElement('button');
+                                                                restartButton.innerHTML = 'Exit';
+                                                                restartButton.addEventListener('click', function () {
+                                                                    location.reload(); // Reload the page to restart the file
+                                                                });
+                                                                document.body.appendChild(restartButton);
+                                                            }, 2000);
+                                                        });
+                                                        document.body.appendChild(bunkerButton);
 
-                                                           
-                                                                    var button2 = document.createElement('button');
-                                                                                    button2.innerHTML = 'Go to white house';
-                                                                                    button2.addEventListener('click', function() {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                                        setTimeout(function() {
-                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
-                                                                                            var answerButton = document.createElement('button');
-                                                                                            document.body.appendChild(answerButton);
-                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                                            answerButton.addEventListener('click', function() {
-                                                                                                document.body.innerHTML = '';
-                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                                setTimeout(function() {
-                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                                
-                                                                                            
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Fight with him';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                
-                                                                                                });
-                                                                                            },2000);
-                                                                                            });
-                                                                                            var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                        }, 3000);
 
-                                                                                    });
-                                                                                    document.body.appendChild(button2);
-                                                                }, 2000);
-                                                            
-                                                        
-                                                    
-                                                    
+                                                        var button2 = document.createElement('button');
+                                                        button2.innerHTML = 'Go to white house';
+                                                        button2.addEventListener('click', function () {
+                                                            document.body.innerHTML = '';
+                                                            document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                            document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                            setTimeout(function () {
+                                                                document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                var answerButton = document.createElement('button');
+                                                                document.body.appendChild(answerButton);
+                                                                answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                answerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = '';
+                                                                    document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                    document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Leave';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+                                                                        });
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Fight with him';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+
+                                                                        });
+                                                                    }, 2000);
+                                                                });
+                                                                var answerButton = document.createElement('button');
+                                                                document.body.appendChild(answerButton);
+                                                                answerButton.innerHTML = 'Leave';
+                                                                answerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = '';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                        document.body.style.backgroundColor = 'red';
+                                                                        var restartButton = document.createElement('button');
+                                                                        restartButton.innerHTML = 'Exit';
+                                                                        restartButton.addEventListener('click', function () {
+                                                                            location.reload(); // Reload the page to restart the file
+                                                                        });
+                                                                        document.body.appendChild(restartButton);
+                                                                    }, 2000);
+                                                                });
+                                                            }, 3000);
+
+                                                        });
+                                                        document.body.appendChild(button2);
+                                                    }, 2000);
+
+
+
+
                                                 });
 
                                                 document.body.appendChild(groceryButton);
@@ -1694,51 +1758,51 @@ window.onload = function () {
                                                                 document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
-                                                                    // Button to go to the bunker
-                                                                    var bunkerButton = document.createElement('button');
-                                                                    bunkerButton.innerHTML = 'Go to the bunker';
-                                                                    bunkerButton.addEventListener('click', function () {
-                                                                        document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
-                                                                        document.body.innerHTML += '<p>You died of starvation.</p>';
-                                                                        document.body.style.backgroundColor = 'red';
-                                                                        var restartButton = document.createElement('button');
-                                                                        restartButton.innerHTML = 'Exit';
-                                                                        restartButton.addEventListener('click', function () {
-                                                                            location.reload(); // Reload the page to restart the file
-                                                                        });
-                                                                        document.body.appendChild(restartButton);       
+                                                                // Button to go to the bunker
+                                                                var bunkerButton = document.createElement('button');
+                                                                bunkerButton.innerHTML = 'Go to the bunker';
+                                                                bunkerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
+                                                                    document.body.innerHTML += '<p>You died of starvation.</p>';
+                                                                    document.body.style.backgroundColor = 'red';
+                                                                    var restartButton = document.createElement('button');
+                                                                    restartButton.innerHTML = 'Exit';
+                                                                    restartButton.addEventListener('click', function () {
+                                                                        location.reload(); // Reload the page to restart the file
                                                                     });
-                                                                    document.body.appendChild(bunkerButton);
+                                                                    document.body.appendChild(restartButton);
+                                                                });
+                                                                document.body.appendChild(bunkerButton);
 
-                                                                    // Button to go to the white house
-                                                                    var whiteHouseButton = document.createElement('button');
-                                                                    whiteHouseButton.innerHTML = 'Go to the white house';
-                                                                    whiteHouseButton.addEventListener('click', function () {
-                                                                        document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
-                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                        setTimeout(function() {
-                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
-                                                                            var answerButton = document.createElement('button');
-                                                                            document.body.appendChild(answerButton);
-                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                            answerButton.addEventListener('click', function() {
-                                                                                document.body.innerHTML = '';
-                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                setTimeout(function() {
-                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                
-                                                                            
+                                                                // Button to go to the white house
+                                                                var whiteHouseButton = document.createElement('button');
+                                                                whiteHouseButton.innerHTML = 'Go to the white house';
+                                                                whiteHouseButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = ''; // Clear the screen
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                                    document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                            document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
                                                                                 var answerButton = document.createElement('button');
                                                                                 document.body.appendChild(answerButton);
                                                                                 answerButton.innerHTML = 'Leave';
-                                                                                answerButton.addEventListener('click', function() {
+                                                                                answerButton.addEventListener('click', function () {
                                                                                     document.body.innerHTML = '';
                                                                                     document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                    setTimeout(function() {
+                                                                                    setTimeout(function () {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
                                                                                         document.body.innerHTML += '<p>You die a few minutes later.</p>';
@@ -1746,7 +1810,7 @@ window.onload = function () {
                                                                                         document.body.style.backgroundColor = 'red';
                                                                                         var restartButton = document.createElement('button');
                                                                                         restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
+                                                                                        restartButton.addEventListener('click', function () {
                                                                                             location.reload(); // Reload the page to restart the file
                                                                                         });
                                                                                         document.body.appendChild(restartButton);
@@ -1755,50 +1819,50 @@ window.onload = function () {
                                                                                 var answerButton = document.createElement('button');
                                                                                 document.body.appendChild(answerButton);
                                                                                 answerButton.innerHTML = 'Fight with him';
-                                                                                answerButton.addEventListener('click', function() {
+                                                                                answerButton.addEventListener('click', function () {
                                                                                     document.body.innerHTML = '';
                                                                                     document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
-                                                                                    setTimeout(function() {
+                                                                                    setTimeout(function () {
                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                         document.body.style.backgroundColor = 'red';
                                                                                         var restartButton = document.createElement('button');
                                                                                         restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
+                                                                                        restartButton.addEventListener('click', function () {
                                                                                             location.reload(); // Reload the page to restart the file
                                                                                         });
                                                                                         document.body.appendChild(restartButton);
                                                                                     }, 2000);
-                                                                                
-                                                                                });
-                                                                            },2000);
-                                                                            });
-                                                                            var answerButton = document.createElement('button');
-                                                                                document.body.appendChild(answerButton);
-                                                                                answerButton.innerHTML = 'Leave';
-                                                                                answerButton.addEventListener('click', function() {
-                                                                                    document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                    setTimeout(function() {
-                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                        var restartButton = document.createElement('button');
-                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                        restartButton.addEventListener('click', function() {
-                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                        });
-                                                                                        document.body.appendChild(restartButton);
-                                                                                    }, 2000);
-                                                                                });
-                                                                        }, 3000);
 
-                                                                    
-                                                                    
-                                                                        
-                                                                    }); 
-                                                                    document.body.appendChild(whiteHouseButton);
+                                                                                });
+                                                                            }, 2000);
+                                                                        });
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Leave';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+                                                                        });
+                                                                    }, 3000);
+
+
+
+
+                                                                });
+                                                                document.body.appendChild(whiteHouseButton);
                                                             });
                                                             document.body.appendChild(additionalButton);
 
@@ -1814,114 +1878,114 @@ window.onload = function () {
                                                     var leaveStoreButton = document.createElement('button');
                                                     document.body.appendChild(leaveStoreButton);
                                                     leaveStoreButton.innerHTML = 'Leave Store';
-                                                    leaveStoreButton.addEventListener('click', function() {
+                                                    leaveStoreButton.addEventListener('click', function () {
                                                         document.body.innerHTML = '';
                                                         document.body.innerHTML += '<p style="color: grey;">You decided to leave the store</p>';
                                                         document.body.innerHTML += '<h1>Where will you run now?</h1>';
-                                                            var bunkerButton = document.createElement('button');
-                                                            bunkerButton.innerHTML = 'Bunker';
-                                                            bunkerButton.addEventListener('click', function() {
-                                                                document.body.innerHTML = '';
-                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                setTimeout(function() {
-                                                                    document.body.innerHTML += '<p>You are safe in the bunker</p>';
-                                                                    document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
-                                                                    document.body.style.backgroundColor = 'red';
-                                                                    var restartButton = document.createElement('button');
-                                                                    restartButton.innerHTML = 'Exit';
-                                                                    restartButton.addEventListener('click', function() {
-                                                                        location.reload(); // Reload the page to restart the file
-                                                                    });
-                                                                    document.body.appendChild(restartButton);
-                                                                }, 2000);
-                                                            });
-                                                            document.body.appendChild(bunkerButton);
+                                                        var bunkerButton = document.createElement('button');
+                                                        bunkerButton.innerHTML = 'Bunker';
+                                                        bunkerButton.addEventListener('click', function () {
+                                                            document.body.innerHTML = '';
+                                                            document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                            setTimeout(function () {
+                                                                document.body.innerHTML += '<p>You are safe in the bunker</p>';
+                                                                document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
+                                                                document.body.style.backgroundColor = 'red';
+                                                                var restartButton = document.createElement('button');
+                                                                restartButton.innerHTML = 'Exit';
+                                                                restartButton.addEventListener('click', function () {
+                                                                    location.reload(); // Reload the page to restart the file
+                                                                });
+                                                                document.body.appendChild(restartButton);
+                                                            }, 2000);
+                                                        });
+                                                        document.body.appendChild(bunkerButton);
 
-                                                           
-                                                                    var button2 = document.createElement('button');
-                                                                                    button2.innerHTML = 'Go to white house';
-                                                                                    button2.addEventListener('click', function() {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '< style="color: grey;">You decided to go to the white house</p>';
-                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                                        setTimeout(function() {
-                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
-                                                                                            var answerButton = document.createElement('button');
-                                                                                            document.body.appendChild(answerButton);
-                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                                            answerButton.addEventListener('click', function() {
-                                                                                                document.body.innerHTML = '';
-                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                                setTimeout(function() {
-                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                                
-                                                                                            
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Fight with him';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                
-                                                                                                });
-                                                                                            },2000);
-                                                                                            });
-                                                                                            var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                        }, 3000);
 
-                                                                                    });
-                                                                                    document.body.appendChild(button2);
-                                                                }, 2000);v
+                                                        var button2 = document.createElement('button');
+                                                        button2.innerHTML = 'Go to white house';
+                                                        button2.addEventListener('click', function () {
+                                                            document.body.innerHTML = '';
+                                                            document.body.innerHTML += '< style="color: grey;">You decided to go to the white house</p>';
+                                                            document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                            setTimeout(function () {
+                                                                document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                var answerButton = document.createElement('button');
+                                                                document.body.appendChild(answerButton);
+                                                                answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                answerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = '';
+                                                                    document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                    document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Leave';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+                                                                        });
+                                                                        var answerButton = document.createElement('button');
+                                                                        document.body.appendChild(answerButton);
+                                                                        answerButton.innerHTML = 'Fight with him';
+                                                                        answerButton.addEventListener('click', function () {
+                                                                            document.body.innerHTML = '';
+                                                                            document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                            setTimeout(function () {
+                                                                                document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                document.body.style.backgroundColor = 'red';
+                                                                                var restartButton = document.createElement('button');
+                                                                                restartButton.innerHTML = 'Exit';
+                                                                                restartButton.addEventListener('click', function () {
+                                                                                    location.reload(); // Reload the page to restart the file
+                                                                                });
+                                                                                document.body.appendChild(restartButton);
+                                                                            }, 2000);
+
+                                                                        });
+                                                                    }, 2000);
+                                                                });
+                                                                var answerButton = document.createElement('button');
+                                                                document.body.appendChild(answerButton);
+                                                                answerButton.innerHTML = 'Leave';
+                                                                answerButton.addEventListener('click', function () {
+                                                                    document.body.innerHTML = '';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                    setTimeout(function () {
+                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                        document.body.innerHTML += '<h1>Try again</h1>';
+                                                                        document.body.style.backgroundColor = 'red';
+                                                                        var restartButton = document.createElement('button');
+                                                                        restartButton.innerHTML = 'Exit';
+                                                                        restartButton.addEventListener('click', function () {
+                                                                            location.reload(); // Reload the page to restart the file
+                                                                        });
+                                                                        document.body.appendChild(restartButton);
+                                                                    }, 2000);
+                                                                });
+                                                            }, 3000);
+
+                                                        });
+                                                        document.body.appendChild(button2);
+                                                    }, 2000); v
                                                 });
                                                 document.body.appendChild(drugButton);
 
@@ -1974,12 +2038,12 @@ window.onload = function () {
                                     });
                                     document.body.appendChild(button);
                                 });
-                                
+
                             });
 
                             // Append the button to the document body
                             document.body.appendChild(simpleButton);
-                            
+
                         });
 
 
@@ -1989,8 +2053,24 @@ window.onload = function () {
 
                 }
 
-// what to take weapon store--
+                // what to take weapon store--
                 if (choice === 'weapon store') {
+                    document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+
+                    // Append the box to the body
+                    document.body.appendChild(box);
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var weaponChoices = ['knife', 'grenade', 'gun'];
                     weaponChoices.forEach(function (weaponChoice) {
@@ -2034,6 +2114,22 @@ window.onload = function () {
                                                     document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                     // choice of what to take
                                                     if (choice === 'grocery store') {
+                                                        document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                        // Create a box element
+                                                        var box = document.createElement('div');
+                                                        box.style.width = '400px';
+                                                        box.style.height = '550px';
+                                                        box.style.backgroundColor = 'black';
+                                                        box.style.position = 'absolute';
+                                                        box.style.top = '50%';
+                                                        box.style.left = '50%';
+                                                        box.style.transform = 'translate(-50%, -50%)';
+                                                        box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                        box.style.borderRadius = '10px';
+                                                        box.style.zIndex = '-1'; // Send the box to the back
+
+                                                        // Append the box to the body
+                                                        document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var groceryChoices = [' Raw meat', 'bread', 'milk', 'eggs'];
                                                         groceryChoices.forEach(function (groceryChoice) {
@@ -2060,429 +2156,429 @@ window.onload = function () {
                                                                             document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
-                                                                                document.body.innerHTML += '<h1>What will you do now?</h1>';
-                                                                                var button1 = document.createElement('button');
-                                                                                button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        if (inventory.includes('bread') && ('water')) {
-                                                                                            document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('flashlight')) {
-                                                                                            document.body.innerHTML += '<p>You died of thirst...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('rope')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && (' Raw meat')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-
-                                                                                        else if (inventory.includes('milk') && ('water')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('flashlight')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('rope')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('milk') && (' Raw meat')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-                                                                                        
-                                                                                        else if (inventory.includes(' Raw meat') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('eggs') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('Canned food') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
+                                                                            document.body.innerHTML += '<h1>What will you do now?</h1>';
+                                                                            var button1 = document.createElement('button');
+                                                                            button1.innerHTML = 'Go to bunker';
+                                                                            button1.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                if (inventory.includes('bread') && ('water')) {
+                                                                                    document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
                                                                                     });
-                                                                                    document.body.appendChild(button1);
-                                                                                    var button2 = document.createElement('button');
-                                                                                    button2.innerHTML = 'Go to white house';
-                                                                                    button2.addEventListener('click', function() {
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('flashlight')) {
+                                                                                    document.body.innerHTML += '<p>You died of thirst...</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('rope')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && (' Raw meat')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death!</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('Canned food') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                            });
+                                                                            document.body.appendChild(button1);
+                                                                            var button2 = document.createElement('button');
+                                                                            button2.innerHTML = 'Go to white house';
+                                                                            button2.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                                                document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                                setTimeout(function () {
+                                                                                    document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                                    answerButton.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                                        setTimeout(function() {
-                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
                                                                                             var answerButton = document.createElement('button');
                                                                                             document.body.appendChild(answerButton);
-                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                                            answerButton.addEventListener('click', function() {
+                                                                                            answerButton.innerHTML = 'Leave';
+                                                                                            answerButton.addEventListener('click', function () {
                                                                                                 document.body.innerHTML = '';
-                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                                setTimeout(function() {
-                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                                
-                                                                                            
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Fight with him';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                
-                                                                                                });
-                                                                                            },2000);
+                                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                                    document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                    document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                    document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
                                                                                             });
                                                                                             var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                        }, 3000);
+                                                                                            document.body.appendChild(answerButton);
+                                                                                            answerButton.innerHTML = 'Fight with him';
+                                                                                            answerButton.addEventListener('click', function () {
+                                                                                                document.body.innerHTML = '';
+                                                                                                document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
 
+                                                                                            });
+                                                                                        }, 2000);
                                                                                     });
-                                                                                    document.body.appendChild(button2);
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Leave';
+                                                                                    answerButton.addEventListener('click', function () {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                            document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                            document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                            document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                            var restartButton = document.createElement('button');
+                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                            });
+                                                                                            document.body.appendChild(restartButton);
+                                                                                        }, 2000);
+                                                                                    });
+                                                                                }, 3000);
+
+                                                                            });
+                                                                            document.body.appendChild(button2);
                                                                         });
                                                                         document.body.appendChild(additionalButton);
                                                                     });
@@ -2507,7 +2603,7 @@ window.onload = function () {
                                                             drugButton.innerHTML = drugChoice;
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML ='';
+                                                                document.body.innerHTML = '';
                                                                 document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
@@ -2526,7 +2622,7 @@ window.onload = function () {
                                                                             document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             //correct inventory
-                                                                            if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') ) {
+                                                                            if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask')) {
                                                                                 setTimeout(function () {
                                                                                     document.body.innerHTML = '';
                                                                                     document.body.innerHTML += '<p>As you leave the store, you receive a phone call...</p>';
@@ -2618,14 +2714,14 @@ window.onload = function () {
                                                                                                                     document.body.innerHTML += '<p>You arrived safely to the bunker.</p>';
                                                                                                                     document.body.innerHTML += '<p>You managed to survive the night but you died of hunger and thirst...</p>'
                                                                                                                     document.body.style.backgroundColor = 'red';
-                                                                                                                // Create Restart Button
-                                                                                                                var restartButton = document.createElement('button');
-                                                                                                                restartButton.innerHTML = 'Exit';
-                                                                                                                restartButton.addEventListener('click', function () {
-                                                                                                                    location.reload(); // Reload the page to restart the file
-                                                                                                                });
+                                                                                                                    // Create Restart Button
+                                                                                                                    var restartButton = document.createElement('button');
+                                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                                    });
 
-                                                                                                                document.body.appendChild(restartButton);
+                                                                                                                    document.body.appendChild(restartButton);
                                                                                                                 });
                                                                                                                 document.body.appendChild(answerButton);
 
@@ -2669,47 +2765,47 @@ window.onload = function () {
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
-                                                                                                                var choiceButton1 = document.createElement('button');
-                                                                                                                choiceButton1.innerHTML = 'Go to girlfriends house';
-                                                                                                                choiceButton1.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
-                                                                                                                    setTimeout(function () {
-                                                                                                                        document.body.innerHTML += '<p>As you drive to her place</p>';
-                                                                                                                        document.body.innerHTML += '<p>You get caught up by the radiation</p>';
-                                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                                        var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-
-                                                                                                                    }, 2000);
+                                                                                                        var choiceButton1 = document.createElement('button');
+                                                                                                        choiceButton1.innerHTML = 'Go to girlfriends house';
+                                                                                                        choiceButton1.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
+                                                                                                            setTimeout(function () {
+                                                                                                                document.body.innerHTML += '<p>As you drive to her place</p>';
+                                                                                                                document.body.innerHTML += '<p>You get caught up by the radiation</p>';
+                                                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                                document.body.style.backgroundColor = 'red';
+                                                                                                                var restartButton = document.createElement('button');
+                                                                                                                restartButton.innerHTML = 'Exit';
+                                                                                                                restartButton.addEventListener('click', function () {
+                                                                                                                    location.reload(); // Reload the page to restart the file
                                                                                                                 });
-                                                                                                                document.body.appendChild(choiceButton1);
+                                                                                                                document.body.appendChild(restartButton);
 
-                                                                                                                var choiceButton2 = document.createElement('button');
-                                                                                                                choiceButton2.innerHTML = 'Get in the car';
-                                                                                                                choiceButton2.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>The radiation caught up to you.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
-                                                                                                                    document.body.style.backgroundColor = 'red';
-                                                                                                                    // Create Restart Button
-                                                                                                                    var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-                                                                                                                });
-                                                                                                                document.body.appendChild(choiceButton2); 
-                                                                                                        
+                                                                                                            }, 2000);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton1);
+
+                                                                                                        var choiceButton2 = document.createElement('button');
+                                                                                                        choiceButton2.innerHTML = 'Get in the car';
+                                                                                                        choiceButton2.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p>The radiation caught up to you.</p>';
+                                                                                                            document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
+                                                                                                            document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                                            // Create Restart Button
+                                                                                                            var restartButton = document.createElement('button');
+                                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                                            });
+                                                                                                            document.body.appendChild(restartButton);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton2);
+
                                                                                                     }, 2000);
                                                                                                 });
 
@@ -2724,434 +2820,434 @@ window.onload = function () {
 
                                                                                     }, 3000);
 
-                                                                                
+
                                                                                 }, 2000);
-                                                                            
+
                                                                             }
                                                                             else {
                                                                                 document.body.innerHTML = '';
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
                                                                                 var button1 = document.createElement('button');
                                                                                 button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
+                                                                                button1.addEventListener('click', function () {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                    if (inventory.includes('bread') && ('water')) {
+                                                                                        document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && ('flashlight')) {
+                                                                                        document.body.innerHTML += '<p>You died of thirst...</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && ('rope')) {
+                                                                                        document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('bread') && (' Raw meat')) {
+                                                                                        document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+
+                                                                                    else if (inventory.includes('milk') && ('water')) {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        if (inventory.includes('bread') && ('water')) {
-                                                                                            document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('flashlight')) {
-                                                                                            document.body.innerHTML += '<p>You died of thirst...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('rope')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && (' Raw meat')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death!</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('water')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('flashlight')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('milk') && ('rope')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('milk') && (' Raw meat')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('milk') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-                                                                                        
-                                                                                        else if (inventory.includes(' Raw meat') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes(' Raw meat') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes(' Raw meat') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('eggs') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('eggs') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('Canned food') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('Canned food') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('Canned food') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('eggs') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('Canned food') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('Canned food') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('Canned food') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('fresh fruits') && ('water')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('fresh fruits') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('fresh fruits') && ('flashlight')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('cheese') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('cheese') && (' bread')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('cheese') && (' milk')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of lactose overdose!!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
+                                                                                    else if (inventory.includes('fresh fruits') && ('rope')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                        else if (inventory.includes('cheese') && ('eggs')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of loneliness.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                            
-                                                                                        }
-                                                                                        else {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You died the next day because you didn\'t have anything to eat or drink.</p>';
+                                                                                    else if (inventory.includes('fresh fruits') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
 
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    });
-                                                                                
+                                                                                    else if (inventory.includes('cheese') && (' Raw meat')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('cheese') && (' bread')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                    else if (inventory.includes('cheese') && (' milk')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of lactose overdose!!</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+
+                                                                                    else if (inventory.includes('cheese') && ('eggs')) {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                        document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                        document.body.innerHTML += '<p></p>';
+                                                                                        document.body.innerHTML += '<p>You died of loneliness.</p>';
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+
+                                                                                    }
+                                                                                    else {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                        document.body.innerHTML += '<p>You died the next day because you didn\'t have anything to eat or drink.</p>';
+
+                                                                                        document.body.style.backgroundColor = 'red';
+                                                                                        var restartButton = document.createElement('button');
+                                                                                        restartButton.innerHTML = 'Exit';
+                                                                                        restartButton.addEventListener('click', function () {
+                                                                                            location.reload(); // Reload the page to restart the file
+                                                                                        });
+                                                                                        document.body.appendChild(restartButton);
+                                                                                    }
+                                                                                });
+
                                                                                 document.body.appendChild(button1);
-                                                                            
+
                                                                                 var button2 = document.createElement('button');
                                                                                 button2.innerHTML = 'Phone';
                                                                                 document.body.appendChild(button2);
-                                                                                
-                                                                            }    
+
+                                                                            }
 
                                                                         });
                                                                         document.body.appendChild(additionalButton);
@@ -3244,6 +3340,22 @@ window.onload = function () {
                                             document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'grocery store') {
+                                                document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                                                 groceryChoices.forEach(function (groceryChoice) {
@@ -3269,7 +3381,7 @@ window.onload = function () {
                                                                     document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                     //Leave weapon3 here:
-                                                                    
+
                                                                 });
                                                                 document.body.appendChild(additionalButton);
                                                             });
@@ -3287,6 +3399,22 @@ window.onload = function () {
 
                                             }
                                             if (choice === 'Gun store') {
+                                                document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var drugChoices = ['Grenade', 'M6', 'AK47'];
                                                 drugChoices.forEach(function (drugChoice) {
@@ -3411,6 +3539,22 @@ window.onload = function () {
                                         document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'grocery store') {
+                                            document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                                             groceryChoices.forEach(function (groceryChoice) {
@@ -3554,7 +3698,7 @@ window.onload = function () {
 
 
 
-//What to take in drug store--
+                //What to take in drug store--
                 if (choice === 'drug store') {
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
@@ -3603,6 +3747,22 @@ window.onload = function () {
                                                     document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                     // choice of what to take 
                                                     if (choice === 'grocery store') {
+                                                        document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                        // Create a box element
+                                                        var box = document.createElement('div');
+                                                        box.style.width = '400px';
+                                                        box.style.height = '550px';
+                                                        box.style.backgroundColor = 'black';
+                                                        box.style.position = 'absolute';
+                                                        box.style.top = '50%';
+                                                        box.style.left = '50%';
+                                                        box.style.transform = 'translate(-50%, -50%)';
+                                                        box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                        box.style.borderRadius = '10px';
+                                                        box.style.zIndex = '-1'; // Send the box to the back
+
+                                                        // Append the box to the body
+                                                        document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var groceryChoices = [' Raw meat', 'bread', 'milk', 'eggs'];
                                                         groceryChoices.forEach(function (groceryChoice) {
@@ -3629,429 +3789,429 @@ window.onload = function () {
                                                                             document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
-                                                                                document.body.innerHTML += '<h1>What will you do now?</h1>';
-                                                                                var button1 = document.createElement('button');
-                                                                                button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        if (inventory.includes('bread') && ('water')) {
-                                                                                            document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('flashlight')) {
-                                                                                            document.body.innerHTML += '<p>You died of thirst...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && ('rope')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-                                                                                        else if (inventory.includes('bread') && (' Raw meat')) {
-                                                                                            document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);       
-                                                                                        } 
-
-                                                                                        else if (inventory.includes('milk') && ('water')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death!</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('flashlight')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('milk') && ('rope')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('milk') && (' Raw meat')) {
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-                                                                                        
-                                                                                        else if (inventory.includes(' Raw meat') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes(' Raw meat') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);                                
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('eggs') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thrist.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                    
-                                                                                        else if (inventory.includes('eggs') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('Canned food') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-                                                                                        else if (inventory.includes('Canned food') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('water')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('flashlight')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && ('rope')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
-                                                                                        else if (inventory.includes('fresh fruits') && (' Raw meat')){
-                                                                                            document.body.innerHTML = '';
-                                                                                            document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
-                                                                                            document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
-                                                                                            document.body.innerHTML += '<p>You feel more and more lonely</p>';
-                                                                                            document.body.innerHTML += '<p></p>';
-                                                                                            document.body.innerHTML += '<p>You died of thirst.</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        }
-
+                                                                            document.body.innerHTML += '<h1>What will you do now?</h1>';
+                                                                            var button1 = document.createElement('button');
+                                                                            button1.innerHTML = 'Go to bunker';
+                                                                            button1.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                if (inventory.includes('bread') && ('water')) {
+                                                                                    document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
                                                                                     });
-                                                                                    document.body.appendChild(button1);
-                                                                                    var button2 = document.createElement('button');
-                                                                                    button2.innerHTML = 'Go to white house';
-                                                                                    button2.addEventListener('click', function() {
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('flashlight')) {
+                                                                                    document.body.innerHTML += '<p>You died of thirst...</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && ('rope')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('bread') && (' Raw meat')) {
+                                                                                    document.body.innerHTML += '<p>You had bread to eat however you had nothing to eat so died thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death!</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('milk') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes(' Raw meat') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You ate a piece of raw meat you got from the grocery store and died from food poissoning.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thrist.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('eggs') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You starved to death eggs were not nutritious enough.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('Canned food') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+                                                                                else if (inventory.includes('Canned food') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('water')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You had enough fruit for 3 days but the rest startedd to rot and you starved to death.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('flashlight')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && ('rope')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                                else if (inventory.includes('fresh fruits') && (' Raw meat')) {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>';
+                                                                                    document.body.innerHTML += '<p>A few days passed and you felt guilty to not save your friends or family...</p>';
+                                                                                    document.body.innerHTML += '<p>You feel more and more lonely</p>';
+                                                                                    document.body.innerHTML += '<p></p>';
+                                                                                    document.body.innerHTML += '<p>You died of thirst.</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                }
+
+                                                                            });
+                                                                            document.body.appendChild(button1);
+                                                                            var button2 = document.createElement('button');
+                                                                            button2.innerHTML = 'Go to white house';
+                                                                            button2.addEventListener('click', function () {
+                                                                                document.body.innerHTML = '';
+                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
+                                                                                document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
+                                                                                setTimeout(function () {
+                                                                                    document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Say that you are a friend of the president';
+                                                                                    answerButton.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
-                                                                                        document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
-                                                                                        setTimeout(function() {
-                                                                                            document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
+                                                                                        document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
+
+
                                                                                             var answerButton = document.createElement('button');
                                                                                             document.body.appendChild(answerButton);
-                                                                                            answerButton.innerHTML = 'Say that you are a friend of the president';
-                                                                                            answerButton.addEventListener('click', function() {
+                                                                                            answerButton.innerHTML = 'Leave';
+                                                                                            answerButton.addEventListener('click', function () {
                                                                                                 document.body.innerHTML = '';
-                                                                                                document.body.innerHTML += '<p><b>Guard:</b> This is a restricted area! what are you doing here?</p>';
-                                                                                                document.body.innerHTML += '<p><b>You:</b>I am a friend of the president</p>';
-                                                                                                setTimeout(function() {
-                                                                                                    document.body.innerHTML += '<p><b>Guard:</b>I don\'t have any instructions from the president. This is your last warning to leave the area!</p>';
-                                                                                                
-                                                                                            
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                                var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Fight with him';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You lost and got killed</p>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                
-                                                                                                });
-                                                                                            },2000);
+                                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                                    document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                    document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                    document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
                                                                                             });
                                                                                             var answerButton = document.createElement('button');
-                                                                                                document.body.appendChild(answerButton);
-                                                                                                answerButton.innerHTML = 'Leave';
-                                                                                                answerButton.addEventListener('click', function() {
-                                                                                                    document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
-                                                                                                    setTimeout(function() {
-                                                                                                        document.body.innerHTML += '<p>You got caught up by the radiation</p>';
-                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                        var restartButton = document.createElement('button');
-                                                                                                        restartButton.innerHTML = 'Exit';
-                                                                                                        restartButton.addEventListener('click', function() {
-                                                                                                            location.reload(); // Reload the page to restart the file
-                                                                                                        });
-                                                                                                        document.body.appendChild(restartButton);
-                                                                                                    }, 2000);
-                                                                                                });
-                                                                                        }, 3000);
+                                                                                            document.body.appendChild(answerButton);
+                                                                                            answerButton.innerHTML = 'Fight with him';
+                                                                                            answerButton.addEventListener('click', function () {
+                                                                                                document.body.innerHTML = '';
+                                                                                                document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
+                                                                                                setTimeout(function () {
+                                                                                                    document.body.innerHTML += '<p>You lost and got killed</p>';
+                                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                                    var restartButton = document.createElement('button');
+                                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                                    restartButton.addEventListener('click', function () {
+                                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                                    });
+                                                                                                    document.body.appendChild(restartButton);
+                                                                                                }, 2000);
 
+                                                                                            });
+                                                                                        }, 2000);
                                                                                     });
-                                                                                    document.body.appendChild(button2);
+                                                                                    var answerButton = document.createElement('button');
+                                                                                    document.body.appendChild(answerButton);
+                                                                                    answerButton.innerHTML = 'Leave';
+                                                                                    answerButton.addEventListener('click', function () {
+                                                                                        document.body.innerHTML = '';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
+                                                                                        setTimeout(function () {
+                                                                                            document.body.innerHTML += '<p>You got caught up by the radiation</p>';
+                                                                                            document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                            document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                            document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                            var restartButton = document.createElement('button');
+                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                            });
+                                                                                            document.body.appendChild(restartButton);
+                                                                                        }, 2000);
+                                                                                    });
+                                                                                }, 3000);
+
+                                                                            });
+                                                                            document.body.appendChild(button2);
                                                                         });
                                                                         document.body.appendChild(additionalButton);
                                                                     });
@@ -4076,7 +4236,7 @@ window.onload = function () {
                                                             drugButton.innerHTML = drugChoice;
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML ='';
+                                                                document.body.innerHTML = '';
                                                                 document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
@@ -4186,7 +4346,7 @@ window.onload = function () {
                                                                                                                     document.body.innerHTML = '';
                                                                                                                     document.body.innerHTML += '<p>You arrived safely to the bunker as you enter the bunker you see that Joe tried to call you while driving.</p>';
                                                                                                                     document.body.innerHTML += '<p>You get in the bunker</p>';
-                                                                                                                    
+
                                                                                                                 });
                                                                                                                 document.body.appendChild(answerButton);
 
@@ -4230,47 +4390,47 @@ window.onload = function () {
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
-                                                                                                                var choiceButton1 = document.createElement('button');
-                                                                                                                choiceButton1.innerHTML = 'Go to girlfriends house';
-                                                                                                                choiceButton1.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
-                                                                                                                    setTimeout(function () {
-                                                                                                                        document.body.innerHTML += '<p>As you drive to her place</p>';
-                                                                                                                        document.body.innerHTML += '<p>You get caught up by the radiation</p>';
-                                                                                                                        document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
-                                                                                                                        document.body.innerHTML += '<p>You die a few minutes later.</p>';
-                                                                                                                        document.body.innerHTML += '<h1>Try again</h1>';
-                                                                                                                        document.body.style.backgroundColor = 'red';
-                                                                                                                        var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-
-                                                                                                                    }, 2000);
+                                                                                                        var choiceButton1 = document.createElement('button');
+                                                                                                        choiceButton1.innerHTML = 'Go to girlfriends house';
+                                                                                                        choiceButton1.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
+                                                                                                            setTimeout(function () {
+                                                                                                                document.body.innerHTML += '<p>As you drive to her place</p>';
+                                                                                                                document.body.innerHTML += '<p>You get caught up by the radiation</p>';
+                                                                                                                document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
+                                                                                                                document.body.innerHTML += '<p>You die a few minutes later.</p>';
+                                                                                                                document.body.innerHTML += '<h1>Try again</h1>';
+                                                                                                                document.body.style.backgroundColor = 'red';
+                                                                                                                var restartButton = document.createElement('button');
+                                                                                                                restartButton.innerHTML = 'Exit';
+                                                                                                                restartButton.addEventListener('click', function () {
+                                                                                                                    location.reload(); // Reload the page to restart the file
                                                                                                                 });
-                                                                                                                document.body.appendChild(choiceButton1);
+                                                                                                                document.body.appendChild(restartButton);
 
-                                                                                                                var choiceButton2 = document.createElement('button');
-                                                                                                                choiceButton2.innerHTML = 'Get in the car';
-                                                                                                                choiceButton2.addEventListener('click', function () {
-                                                                                                                    document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>The radiation caught up to you.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
-                                                                                                                    document.body.innerHTML += '<p>Try again.</p>';
-                                                                                                                    document.body.style.backgroundColor = 'red';
-                                                                                                                    // Create Restart Button
-                                                                                                                    var restartButton = document.createElement('button');
-                                                                                                                    restartButton.innerHTML = 'Exit';
-                                                                                                                    restartButton.addEventListener('click', function () {
-                                                                                                                        location.reload(); // Reload the page to restart the file
-                                                                                                                    });
-                                                                                                                    document.body.appendChild(restartButton);
-                                                                                                                });
-                                                                                                                document.body.appendChild(choiceButton2); 
-                                                                                                        
+                                                                                                            }, 2000);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton1);
+
+                                                                                                        var choiceButton2 = document.createElement('button');
+                                                                                                        choiceButton2.innerHTML = 'Get in the car';
+                                                                                                        choiceButton2.addEventListener('click', function () {
+                                                                                                            document.body.innerHTML = '';
+                                                                                                            document.body.innerHTML += '<p>The radiation caught up to you.</p>';
+                                                                                                            document.body.innerHTML += '<p>Unfortunately, you didn\'t have enough time to run away.</p>';
+                                                                                                            document.body.innerHTML += '<p>Try again.</p>';
+                                                                                                            document.body.style.backgroundColor = 'red';
+                                                                                                            // Create Restart Button
+                                                                                                            var restartButton = document.createElement('button');
+                                                                                                            restartButton.innerHTML = 'Exit';
+                                                                                                            restartButton.addEventListener('click', function () {
+                                                                                                                location.reload(); // Reload the page to restart the file
+                                                                                                            });
+                                                                                                            document.body.appendChild(restartButton);
+                                                                                                        });
+                                                                                                        document.body.appendChild(choiceButton2);
+
                                                                                                     }, 2000);
                                                                                                 });
 
@@ -4285,36 +4445,36 @@ window.onload = function () {
 
                                                                                     }, 3000);
 
-                                                                                
+
                                                                                 }, 2000);
-                                                                            
+
                                                                             }
                                                                             else {
                                                                                 document.body.innerHTML = '';
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
                                                                                 var button1 = document.createElement('button');
                                                                                 button1.innerHTML = 'Go to bunker';
-                                                                                    button1.addEventListener('click', function () {
-                                                                                        document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
-                                                                                        document.body.innerHTML += '<p>You didn\'t take any food or anything to drink so you died the next day...</p>';
-                                                                                            document.body.style.backgroundColor = 'red';
-                                                                                            var restartButton = document.createElement('button');
-                                                                                            restartButton.innerHTML = 'Exit';
-                                                                                            restartButton.addEventListener('click', function () {
-                                                                                                location.reload(); // Reload the page to restart the file
-                                                                                            });
-                                                                                            document.body.appendChild(restartButton);
-                                                                                        });
-                                                                                    
-                                                                                
+                                                                                button1.addEventListener('click', function () {
+                                                                                    document.body.innerHTML = '';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
+                                                                                    document.body.innerHTML += '<p>You didn\'t take any food or anything to drink so you died the next day...</p>';
+                                                                                    document.body.style.backgroundColor = 'red';
+                                                                                    var restartButton = document.createElement('button');
+                                                                                    restartButton.innerHTML = 'Exit';
+                                                                                    restartButton.addEventListener('click', function () {
+                                                                                        location.reload(); // Reload the page to restart the file
+                                                                                    });
+                                                                                    document.body.appendChild(restartButton);
+                                                                                });
+
+
                                                                                 document.body.appendChild(button1);
-                                                                            
+
                                                                                 var button2 = document.createElement('button');
                                                                                 button2.innerHTML = 'Phone';
                                                                                 document.body.appendChild(button2);
-                                                                                
-                                                                            }    
+
+                                                                            }
 
                                                                         });
                                                                         document.body.appendChild(additionalButton);
@@ -4385,7 +4545,7 @@ window.onload = function () {
 
                                     });
                                     document.body.appendChild(additionalButton);
-                                    
+
                                 });
 
 
@@ -4410,6 +4570,22 @@ window.onload = function () {
                                             document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'grocery store') {
+                                                document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                                                 groceryChoices.forEach(function (groceryChoice) {
@@ -4452,6 +4628,22 @@ window.onload = function () {
 
                                             }
                                             if (choice === 'Gun store') {
+                                                document.body.innerHTML += '<img src="Img/Weapon-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                // Create a box element
+                                                var box = document.createElement('div');
+                                                box.style.width = '400px';
+                                                box.style.height = '550px';
+                                                box.style.backgroundColor = 'black';
+                                                box.style.position = 'absolute';
+                                                box.style.top = '50%';
+                                                box.style.left = '50%';
+                                                box.style.transform = 'translate(-50%, -50%)';
+                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                box.style.borderRadius = '10px';
+                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                // Append the box to the body
+                                                document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var drugChoices = ['Grenade', 'M6', 'AK47'];
                                                 drugChoices.forEach(function (drugChoice) {
@@ -4534,6 +4726,22 @@ window.onload = function () {
                                         document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'grocery store') {
+                                            document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                            // Create a box element
+                                            var box = document.createElement('div');
+                                            box.style.width = '400px';
+                                            box.style.height = '550px';
+                                            box.style.backgroundColor = 'black';
+                                            box.style.position = 'absolute';
+                                            box.style.top = '50%';
+                                            box.style.left = '50%';
+                                            box.style.transform = 'translate(-50%, -50%)';
+                                            box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                            box.style.borderRadius = '10px';
+                                            box.style.zIndex = '-1'; // Send the box to the back
+
+                                            // Append the box to the body
+                                            document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                                             groceryChoices.forEach(function (groceryChoice) {
@@ -4635,6 +4843,22 @@ window.onload = function () {
                                                             document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                             // choice of what to take
                                                             if (choice === 'grocery store') {
+                                                                document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                                                                // Create a box element
+                                                                var box = document.createElement('div');
+                                                                box.style.width = '400px';
+                                                                box.style.height = '550px';
+                                                                box.style.backgroundColor = 'black';
+                                                                box.style.position = 'absolute';
+                                                                box.style.top = '50%';
+                                                                box.style.left = '50%';
+                                                                box.style.transform = 'translate(-50%, -50%)';
+                                                                box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                                                                box.style.borderRadius = '10px';
+                                                                box.style.zIndex = '-1'; // Send the box to the back
+
+                                                                // Append the box to the body
+                                                                document.body.appendChild(box);
                                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                                 var groceryChoices = ['milk', 'eggs', 'Canned food', ' Raw meat', 'bread', 'fresh fruits'];
                                                                 groceryChoices.forEach(function (groceryChoice) {
