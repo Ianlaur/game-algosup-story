@@ -596,6 +596,22 @@ window.onload = function () {
 
                                                     }
                                                     if (choice === 'drug store') {
+                                                        document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
                                                         drugChoices.forEach(function (drugChoice) {
@@ -1331,6 +1347,22 @@ window.onload = function () {
 
                                             }
                                             if (choice === 'drug store') {
+                                                document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                 var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                                 drugChoices.forEach(function (drugChoice) {
@@ -1733,6 +1765,22 @@ window.onload = function () {
 
                                         }
                                         if (choice === 'drug store') {
+                                            document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -2596,6 +2644,22 @@ window.onload = function () {
 
                                                     }
                                                     if (choice === 'drug store') {
+                                                        document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var drugChoices = ['painkillers', 'antibiotics', '2 Anti-radiation mask'];
                                                         drugChoices.forEach(function (drugChoice) {
@@ -3597,6 +3661,22 @@ window.onload = function () {
 
                                         }
                                         if (choice === 'drug store') {
+                                            document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -3700,6 +3780,22 @@ window.onload = function () {
 
                 //What to take in drug store--
                 if (choice === 'drug store') {
+                    document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                     document.body.innerHTML += '<h2>What will you take?</h2>';
                     var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                     drugChoices.forEach(function (drugChoice) {
@@ -4784,6 +4880,22 @@ window.onload = function () {
 
                                         }
                                         if (choice === 'drug store') {
+                                            document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
                                             var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                             drugChoices.forEach(function (drugChoice) {
@@ -4901,6 +5013,22 @@ window.onload = function () {
 
                                                             }
                                                             if (choice === 'drug store') {
+                                                                document.body.innerHTML += '<img src="Img/Drug-store.jpg" alt="Image" style="width: 750px; height: auto; position: fixed; z-index: -1;">';
+                    // Create a box element
+                    var box = document.createElement('div');
+                    box.style.width = '400px';
+                    box.style.height = '550px';
+                    box.style.backgroundColor = 'black';
+                    box.style.position = 'absolute';
+                    box.style.top = '50%';
+                    box.style.left = '50%';
+                    box.style.transform = 'translate(-50%, -50%)';
+                    box.style.opacity = '0.8'; // Set the opacity value (between 0 and 1)
+                    box.style.borderRadius = '10px';
+                    box.style.zIndex = '-1'; // Send the box to the back
+                    
+                    // Append the box to the body
+                    document.body.appendChild(box);
                                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
                                                                 var drugChoices = ['painkillers', 'antibiotics', 'bandages'];
                                                                 drugChoices.forEach(function (drugChoice) {
