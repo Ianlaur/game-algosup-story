@@ -49,7 +49,7 @@ window.onload = function () {
             // choice of where to go
             button.addEventListener('click', function () {
                 document.body.innerHTML = ''; // Clear the screen
-                document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                 // choice of what to take
                 if (choice === 'grocery store') {
                     document.body.innerHTML += '<img src="Img/Grocery-store.jpg" alt="Image" style="width: 250px; height: auto;">';
@@ -61,7 +61,7 @@ window.onload = function () {
                         groceryButton.addEventListener('click', function () {
                             document.body.innerHTML = '';
                             inventory.push(groceryChoice); // Add the chosen item to the inventory
-                            document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                             document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
 
@@ -79,7 +79,7 @@ window.onload = function () {
                                     additionalButton.addEventListener('click', function () {
                                         document.body.innerHTML = '';
                                         inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                        document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                         //Leave  grocery3
                                         var simpleButton = document.createElement('button');
@@ -95,7 +95,7 @@ window.onload = function () {
                                                 // choice of where to go
                                                 button.addEventListener('click', function () {
                                                     document.body.innerHTML = ''; // Clear the screen
-                                                    document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                     // choice of what to take
                                                     if (choice === 'Gun store') {
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -106,7 +106,7 @@ window.onload = function () {
                                                             groceryButton.addEventListener('click', function () {
                                                                 document.body.innerHTML = '';
                                                                 inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                                 // Ask if the player wants to take anything else in the grocery store
@@ -121,7 +121,7 @@ window.onload = function () {
                                                                         additionalButton.innerHTML = additionalChoice;
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
@@ -129,7 +129,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         if (inventory.includes('bread') && ('water')) {
                                                                                             document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
                                                                                             document.body.style.backgroundColor = 'red';
@@ -468,7 +468,7 @@ window.onload = function () {
                                                                                     button2.innerHTML = 'Go to white house';
                                                                                     button2.addEventListener('click', function() {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                                         setTimeout(function() {
                                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -488,7 +488,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -508,7 +508,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Fight with him';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                                         document.body.style.backgroundColor = 'red';
@@ -528,7 +528,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -572,7 +572,7 @@ window.onload = function () {
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
                                                                 document.body.innerHTML ='';
-                                                                document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
                                                                 var takeAnythingElseButton = document.createElement('button');
@@ -587,7 +587,7 @@ window.onload = function () {
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                             document.body.innerHTML = '';
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             //correct inventory
                                                                             if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') && inventory.includes('Canned food') && inventory.includes('water')) {
@@ -639,7 +639,7 @@ window.onload = function () {
                                                                                                 goSomewhereElseButton.innerHTML = 'Go to girlfriend\'s house';
                                                                                                 goSomewhereElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                     document.body.innerHTML += '<p>As you walk to your girlfriend, you see her scared to death....</p>';
                                                                                                     document.body.innerHTML += '<p></p>';
                                                                                                     setTimeout(function () {
@@ -734,7 +734,7 @@ window.onload = function () {
                                                                                                 takeAnythingElseButton.innerHTML = 'Go to friend\'s house';
                                                                                                 takeAnythingElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your friend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your friend\'s house.</p>';
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
@@ -742,7 +742,7 @@ window.onload = function () {
                                                                                                                 choiceButton1.innerHTML = 'Go to girlfriends house';
                                                                                                                 choiceButton1.addEventListener('click', function () {
                                                                                                                     document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                                     setTimeout(function () {
                                                                                                                         document.body.innerHTML += '<p>As you drive to her place</p>';
                                                                                                                         document.body.innerHTML += '<p>You get caught up by the radiation</p>';
@@ -801,7 +801,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         if (inventory.includes('bread') && ('water')) {
                                                                                             document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
                                                                                             document.body.style.backgroundColor = 'red';
@@ -1226,7 +1226,7 @@ window.onload = function () {
                                 simpleButton.addEventListener('click', function () {
                                     // Perform some action when the button is clicked
                                     document.body.innerHTML = '';
-                                    document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                    document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                     var choices = ['Gun store', 'drug store', 'the white house'];
@@ -1236,7 +1236,7 @@ window.onload = function () {
                                         // choice of where to go
                                         button.addEventListener('click', function () {
                                             document.body.innerHTML = ''; // Clear the screen
-                                            document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                            document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'Gun store') {
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -1246,7 +1246,7 @@ window.onload = function () {
                                                     groceryButton.innerHTML = groceryChoice;
                                                     groceryButton.addEventListener('click', function () {
                                                         inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                         // Ask if the player wants to take anything else in the grocery store
@@ -1261,7 +1261,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
 //needs to be completed
@@ -1290,7 +1290,7 @@ window.onload = function () {
                                                     drugButton.innerHTML = drugChoice;
                                                     drugButton.addEventListener('click', function () {
                                                         inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         // Ask if the player wants to take anything else in the drug store
                                                         var takeAnythingElseButton = document.createElement('button');
@@ -1304,7 +1304,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 //Needs to be completed
                                                                 });
@@ -1389,7 +1389,7 @@ window.onload = function () {
                             simpleButton.addEventListener('click', function () {
                                 // Perform some action when the button is clicked
                                 document.body.innerHTML = '';
-                                document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                 var choices = ['Gun store', 'drug store', 'the white house'];
@@ -1399,7 +1399,7 @@ window.onload = function () {
                                     // choice of where to go
                                     button.addEventListener('click', function () {
                                         document.body.innerHTML = ''; // Clear the screen
-                                        document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'Gun store') {
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -1409,7 +1409,7 @@ window.onload = function () {
                                                 groceryButton.innerHTML = groceryChoice;
                                                 groceryButton.addEventListener('click', function () {
                                                     inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                     // Ask if the player wants to take anything else in the grocery store
@@ -1425,7 +1425,7 @@ window.onload = function () {
                                                             additionalButton.addEventListener('click', function () {
                                                                 document.body.innerHTML = '';
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                                                     // Button to go to the bunker
@@ -1433,7 +1433,7 @@ window.onload = function () {
                                                                     bunkerButton.innerHTML = 'Go to the bunker';
                                                                     bunkerButton.addEventListener('click', function () {
                                                                         document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p>You chose to go to the bunker.</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
                                                                         document.body.innerHTML += '<p>You died of starvation.</p>';
                                                                         document.body.style.backgroundColor = 'red';
                                                                         var restartButton = document.createElement('button');
@@ -1450,8 +1450,8 @@ window.onload = function () {
                                                                     whiteHouseButton.innerHTML = 'Go to the white house';
                                                                     whiteHouseButton.addEventListener('click', function () {
                                                                         document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p>You chose to go to the white house.</p>';
-                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                         setTimeout(function() {
                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -1471,7 +1471,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Leave';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1491,7 +1491,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Fight with him';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                         document.body.style.backgroundColor = 'red';
@@ -1511,7 +1511,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Leave';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    document.body.innerHTML += '< style="color: grey;"p>You decided to leave the area</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1551,13 +1551,13 @@ window.onload = function () {
                                                     leaveStoreButton.innerHTML = 'Leave Store';
                                                     leaveStoreButton.addEventListener('click', function() {
                                                         document.body.innerHTML = '';
-                                                        document.body.innerHTML += '<p>You decided to leave the store</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You decided to leave the store</p>';
                                                         document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                                             var bunkerButton = document.createElement('button');
                                                             bunkerButton.innerHTML = 'Bunker';
                                                             bunkerButton.addEventListener('click', function() {
                                                                 document.body.innerHTML = '';
-                                                                document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                 setTimeout(function() {
                                                                     document.body.innerHTML += '<p>You are safe in the bunker</p>';
                                                                     document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
@@ -1577,7 +1577,7 @@ window.onload = function () {
                                                                                     button2.innerHTML = 'Go to white house';
                                                                                     button2.addEventListener('click', function() {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                                         setTimeout(function() {
                                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -1597,7 +1597,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1617,7 +1617,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Fight with him';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                                         document.body.style.backgroundColor = 'red';
@@ -1637,7 +1637,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1676,7 +1676,7 @@ window.onload = function () {
                                                 drugButton.innerHTML = drugChoice;
                                                 drugButton.addEventListener('click', function () {
                                                     inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     // Ask if the player wants to take anything else in the drug store
                                                     var takeAnythingElseButton = document.createElement('button');
@@ -1691,7 +1691,7 @@ window.onload = function () {
                                                             additionalButton.addEventListener('click', function () {
                                                                 document.body.innerHTML = '';
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                                                     // Button to go to the bunker
@@ -1699,7 +1699,7 @@ window.onload = function () {
                                                                     bunkerButton.innerHTML = 'Go to the bunker';
                                                                     bunkerButton.addEventListener('click', function () {
                                                                         document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p>You chose to go to the bunker.</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the bunker.</p>';
                                                                         document.body.innerHTML += '<p>You died of starvation.</p>';
                                                                         document.body.style.backgroundColor = 'red';
                                                                         var restartButton = document.createElement('button');
@@ -1716,8 +1716,8 @@ window.onload = function () {
                                                                     whiteHouseButton.innerHTML = 'Go to the white house';
                                                                     whiteHouseButton.addEventListener('click', function () {
                                                                         document.body.innerHTML = ''; // Clear the screen
-                                                                        document.body.innerHTML += '<p>You chose to go to the white house.</p>';
-                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to go to the white house.</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                         setTimeout(function() {
                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -1737,7 +1737,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Leave';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1757,7 +1757,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Fight with him';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                         document.body.style.backgroundColor = 'red';
@@ -1777,7 +1777,7 @@ window.onload = function () {
                                                                                 answerButton.innerHTML = 'Leave';
                                                                                 answerButton.addEventListener('click', function() {
                                                                                     document.body.innerHTML = '';
-                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                     setTimeout(function() {
                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1816,13 +1816,13 @@ window.onload = function () {
                                                     leaveStoreButton.innerHTML = 'Leave Store';
                                                     leaveStoreButton.addEventListener('click', function() {
                                                         document.body.innerHTML = '';
-                                                        document.body.innerHTML += '<p>You decided to leave the store</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You decided to leave the store</p>';
                                                         document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                                             var bunkerButton = document.createElement('button');
                                                             bunkerButton.innerHTML = 'Bunker';
                                                             bunkerButton.addEventListener('click', function() {
                                                                 document.body.innerHTML = '';
-                                                                document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                 setTimeout(function() {
                                                                     document.body.innerHTML += '<p>You are safe in the bunker</p>';
                                                                     document.body.innerHTML += '<p>However you don\'t have any water so you died of thirst.</p>';
@@ -1842,7 +1842,7 @@ window.onload = function () {
                                                                                     button2.innerHTML = 'Go to white house';
                                                                                     button2.addEventListener('click', function() {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '< style="color: grey;">You decided to go to the white house</p>';
                                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                                         setTimeout(function() {
                                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -1862,7 +1862,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1902,7 +1902,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -1999,7 +1999,7 @@ window.onload = function () {
                         weaponButton.addEventListener('click', function () {
                             inventory.push(weaponChoice); // Add the chosen item to the inventory
                             document.body.innerHTML = ''; // Clear the screen
-                            document.body.innerHTML += '<p>You chose to take: ' + weaponChoice + '</p>';
+                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + weaponChoice + '</p>';
                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                             // Ask if the player wants to take anything else in the weapon store
@@ -2016,7 +2016,7 @@ window.onload = function () {
                                     additionalButton.addEventListener('click', function () {
                                         inventory.push(additionalChoice); // Add the chosen item to the inventory
                                         document.body.innerHTML = '';
-                                        document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                         var simpleButton = document.createElement('button');
                                         simpleButton.innerHTML = 'Leave store';
@@ -2031,7 +2031,7 @@ window.onload = function () {
                                                 // choice of where to go
                                                 button.addEventListener('click', function () {
                                                     document.body.innerHTML = ''; // Clear the screen
-                                                    document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                     // choice of what to take
                                                     if (choice === 'grocery store') {
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -2042,7 +2042,7 @@ window.onload = function () {
                                                             groceryButton.addEventListener('click', function () {
                                                                 document.body.innerHTML = '';
                                                                 inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                                 // Ask if the player wants to take anything else in the grocery store
@@ -2057,7 +2057,7 @@ window.onload = function () {
                                                                         additionalButton.innerHTML = additionalChoice;
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
@@ -2065,7 +2065,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         if (inventory.includes('bread') && ('water')) {
                                                                                             document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
                                                                                             document.body.style.backgroundColor = 'red';
@@ -2404,7 +2404,7 @@ window.onload = function () {
                                                                                     button2.innerHTML = 'Go to white house';
                                                                                     button2.addEventListener('click', function() {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                                         setTimeout(function() {
                                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -2424,7 +2424,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -2464,7 +2464,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -2508,7 +2508,7 @@ window.onload = function () {
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
                                                                 document.body.innerHTML ='';
-                                                                document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
                                                                 var takeAnythingElseButton = document.createElement('button');
@@ -2523,7 +2523,7 @@ window.onload = function () {
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                             document.body.innerHTML = '';
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             //correct inventory
                                                                             if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') ) {
@@ -2575,7 +2575,7 @@ window.onload = function () {
                                                                                                 goSomewhereElseButton.innerHTML = 'Go to girlfriend\'s house';
                                                                                                 goSomewhereElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                     document.body.innerHTML += '<p>As you walk to your girlfriend, you see her scared to death....</p>';
                                                                                                     document.body.innerHTML += '<p></p>';
                                                                                                     setTimeout(function () {
@@ -2665,7 +2665,7 @@ window.onload = function () {
                                                                                                 takeAnythingElseButton.innerHTML = 'Go to friend\'s house';
                                                                                                 takeAnythingElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your friend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your friend\'s house.</p>';
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
@@ -2673,7 +2673,7 @@ window.onload = function () {
                                                                                                                 choiceButton1.innerHTML = 'Go to girlfriends house';
                                                                                                                 choiceButton1.addEventListener('click', function () {
                                                                                                                     document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                                     setTimeout(function () {
                                                                                                                         document.body.innerHTML += '<p>As you drive to her place</p>';
                                                                                                                         document.body.innerHTML += '<p>You get caught up by the radiation</p>';
@@ -2735,7 +2735,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         if (inventory.includes('bread') && ('water')) {
                                                                                             document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
                                                                                             document.body.style.backgroundColor = 'red';
@@ -3231,7 +3231,7 @@ window.onload = function () {
                                 simpleButton.addEventListener('click', function () {
                                     // Perform some action when the button is clicked
                                     document.body.innerHTML = '';
-                                    document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                    document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                     var choices = ['grocery store', 'Gun store', 'the white house'];
@@ -3241,7 +3241,7 @@ window.onload = function () {
                                         // choice of where to go
                                         button.addEventListener('click', function () {
                                             document.body.innerHTML = ''; // Clear the screen
-                                            document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                            document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'grocery store') {
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -3251,7 +3251,7 @@ window.onload = function () {
                                                     groceryButton.innerHTML = groceryChoice;
                                                     groceryButton.addEventListener('click', function () {
                                                         inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                         // Ask if the player wants to take anything else in the grocery store
@@ -3266,7 +3266,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                     //Leave weapon3 here:
                                                                     
@@ -3294,7 +3294,7 @@ window.onload = function () {
                                                     drugButton.innerHTML = drugChoice;
                                                     drugButton.addEventListener('click', function () {
                                                         inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         // Ask if the player wants to take anything else in the drug store
                                                         var takeAnythingElseButton = document.createElement('button');
@@ -3308,7 +3308,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                                 });
@@ -3398,7 +3398,7 @@ window.onload = function () {
                             simpleButton.addEventListener('click', function () {
                                 // Perform some action when the button is clicked
                                 document.body.innerHTML = '';
-                                document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                 var choices = ['grocery store', 'drug store', 'the white house'];
@@ -3408,7 +3408,7 @@ window.onload = function () {
                                     // choice of where to go
                                     button.addEventListener('click', function () {
                                         document.body.innerHTML = ''; // Clear the screen
-                                        document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'grocery store') {
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -3418,7 +3418,7 @@ window.onload = function () {
                                                 groceryButton.innerHTML = groceryChoice;
                                                 groceryButton.addEventListener('click', function () {
                                                     inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                     // Ask if the player wants to take anything else in the grocery store
@@ -3433,7 +3433,7 @@ window.onload = function () {
                                                             additionalButton.innerHTML = additionalChoice;
                                                             additionalButton.addEventListener('click', function () {
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                             });
@@ -3460,7 +3460,7 @@ window.onload = function () {
                                                 drugButton.innerHTML = drugChoice;
                                                 drugButton.addEventListener('click', function () {
                                                     inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     // Ask if the player wants to take anything else in the drug store
                                                     var takeAnythingElseButton = document.createElement('button');
@@ -3474,7 +3474,7 @@ window.onload = function () {
                                                             additionalButton.innerHTML = additionalChoice;
                                                             additionalButton.addEventListener('click', function () {
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                             });
@@ -3564,7 +3564,7 @@ window.onload = function () {
                         drugButton.addEventListener('click', function () {
                             inventory.push(drugChoice); // Add the chosen item to the inventory
                             document.body.innerHTML = '';
-                            document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                             // Ask if the player wants to take anything else in the drug store
@@ -3581,11 +3581,11 @@ window.onload = function () {
                                     additionalButton.innerHTML = additionalChoice;
                                     additionalButton.addEventListener('click', function () {
                                         inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                        document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                         // leave button for drug 3
                                         document.body.innerHTML = '';
-                                        document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                         var simpleButton = document.createElement('button');
                                         simpleButton.innerHTML = 'Leave store';
@@ -3600,8 +3600,8 @@ window.onload = function () {
                                                 // choice of where to go
                                                 button.addEventListener('click', function () {
                                                     document.body.innerHTML = ''; // Clear the screen
-                                                    document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
-                                                    // choice of what to take
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
+                                                    // choice of what to take 
                                                     if (choice === 'grocery store') {
                                                         document.body.innerHTML += '<h2>What will you take?</h2>';
                                                         var groceryChoices = [' Raw meat', 'bread', 'milk', 'eggs'];
@@ -3611,7 +3611,7 @@ window.onload = function () {
                                                             groceryButton.addEventListener('click', function () {
                                                                 document.body.innerHTML = '';
                                                                 inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                                 // Ask if the player wants to take anything else in the grocery store
@@ -3626,7 +3626,7 @@ window.onload = function () {
                                                                         additionalButton.innerHTML = additionalChoice;
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             document.body.innerHTML = '';
                                                                                 document.body.innerHTML += '<h1>What will you do now?</h1>';
@@ -3634,7 +3634,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         if (inventory.includes('bread') && ('water')) {
                                                                                             document.body.innerHTML += '<p>You survived 2 weeks with bread and water however you started to feel lonely and commited suicide.</p>';
                                                                                             document.body.style.backgroundColor = 'red';
@@ -3973,7 +3973,7 @@ window.onload = function () {
                                                                                     button2.innerHTML = 'Go to white house';
                                                                                     button2.addEventListener('click', function() {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the white house</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the white house</p>';
                                                                                         document.body.innerHTML += '<p>As you get there a guard stops you...</p>';
                                                                                         setTimeout(function() {
                                                                                             document.body.innerHTML += '<p><b>Guard:</b>This is a restricted area, what are you doing here?</p>';
@@ -3993,7 +3993,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -4013,7 +4013,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Fight with him';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to fight with the guard</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to fight with the guard</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You lost and got killed</p>';
                                                                                                         document.body.style.backgroundColor = 'red';
@@ -4033,7 +4033,7 @@ window.onload = function () {
                                                                                                 answerButton.innerHTML = 'Leave';
                                                                                                 answerButton.addEventListener('click', function() {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You decided to leave the area</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You decided to leave the area</p>';
                                                                                                     setTimeout(function() {
                                                                                                         document.body.innerHTML += '<p>You got caught up by the radiation</p>';
                                                                                                         document.body.innerHTML += '<p>You are contaminated by radiation!</p>';
@@ -4077,7 +4077,7 @@ window.onload = function () {
                                                             drugButton.addEventListener('click', function () {
                                                                 inventory.push(drugChoice); // Add the chosen item to the inventory
                                                                 document.body.innerHTML ='';
-                                                                document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                 // Ask if the player wants to take anything else in the drug store
                                                                 var takeAnythingElseButton = document.createElement('button');
@@ -4092,7 +4092,7 @@ window.onload = function () {
                                                                         additionalButton.addEventListener('click', function () {
                                                                             inventory.push(additionalChoice); // Add the chosen item to the inventory
                                                                             document.body.innerHTML = '';
-                                                                            document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                            document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                             document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                             //correct inventory
                                                                             if (inventory.includes('2 anti-radiation suit') && inventory.includes('2 Anti-radiation mask') && inventory.includes('Canned food') && inventory.includes('water')) {
@@ -4144,7 +4144,7 @@ window.onload = function () {
                                                                                                 goSomewhereElseButton.innerHTML = 'Go to girlfriend\'s house';
                                                                                                 goSomewhereElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                     document.body.innerHTML += '<p>As you walk to your girlfriend, you see her scared to death....</p>';
                                                                                                     document.body.innerHTML += '<p></p>';
                                                                                                     setTimeout(function () {
@@ -4226,7 +4226,7 @@ window.onload = function () {
                                                                                                 takeAnythingElseButton.innerHTML = 'Go to friend\'s house';
                                                                                                 takeAnythingElseButton.addEventListener('click', function () {
                                                                                                     document.body.innerHTML = '';
-                                                                                                    document.body.innerHTML += '<p>You chose to go to your friend\'s house.</p>';
+                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your friend\'s house.</p>';
                                                                                                     setTimeout(function () {
                                                                                                         document.body.innerHTML += '<p>You\'re friend is not here, you decide to call him...</p>';
                                                                                                         document.body.innerHTML += '<p>He doesn\'t answer </p>';
@@ -4234,7 +4234,7 @@ window.onload = function () {
                                                                                                                 choiceButton1.innerHTML = 'Go to girlfriends house';
                                                                                                                 choiceButton1.addEventListener('click', function () {
                                                                                                                     document.body.innerHTML = '';
-                                                                                                                    document.body.innerHTML += '<p>You chose to go to your girlfriend\'s house.</p>';
+                                                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to go to your girlfriend\'s house.</p>';
                                                                                                                     setTimeout(function () {
                                                                                                                         document.body.innerHTML += '<p>As you drive to her place</p>';
                                                                                                                         document.body.innerHTML += '<p>You get caught up by the radiation</p>';
@@ -4296,7 +4296,7 @@ window.onload = function () {
                                                                                 button1.innerHTML = 'Go to bunker';
                                                                                     button1.addEventListener('click', function () {
                                                                                         document.body.innerHTML = '';
-                                                                                        document.body.innerHTML += '<p>You decided to go to the bunker</p>';
+                                                                                        document.body.innerHTML += '<p style="color: grey;">You decided to go to the bunker</p>';
                                                                                         document.body.innerHTML += '<p>You didn\'t take any food or anything to drink so you died the next day...</p>';
                                                                                             document.body.style.backgroundColor = 'red';
                                                                                             var restartButton = document.createElement('button');
@@ -4397,7 +4397,7 @@ window.onload = function () {
                                 simpleButton.addEventListener('click', function () {
                                     // Perform some action when the button is clicked
                                     document.body.innerHTML = '';
-                                    document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                    document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                     var choices = ['grocery store', 'Gun store', 'the white house'];
@@ -4407,7 +4407,7 @@ window.onload = function () {
                                         // choice of where to go
                                         button.addEventListener('click', function () {
                                             document.body.innerHTML = ''; // Clear the screen
-                                            document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                            document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                             // choice of what to take
                                             if (choice === 'grocery store') {
                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -4417,7 +4417,7 @@ window.onload = function () {
                                                     groceryButton.innerHTML = groceryChoice;
                                                     groceryButton.addEventListener('click', function () {
                                                         inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                         // Ask if the player wants to take anything else in the grocery store
@@ -4432,7 +4432,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                                 });
@@ -4459,7 +4459,7 @@ window.onload = function () {
                                                     drugButton.innerHTML = drugChoice;
                                                     drugButton.addEventListener('click', function () {
                                                         inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                        document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                         // Ask if the player wants to take anything else in the drug store
                                                         var takeAnythingElseButton = document.createElement('button');
@@ -4473,7 +4473,7 @@ window.onload = function () {
                                                                 additionalButton.innerHTML = additionalChoice;
                                                                 additionalButton.addEventListener('click', function () {
                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                                 });
@@ -4495,7 +4495,7 @@ window.onload = function () {
 
                                             }//
                                             if (choice === 'the white house') {
-                                                document.body.innerHTML += '<p>You chose to go to the White House...</p>';
+                                                document.body.innerHTML += '<p style="color: grey;">You chose to go to the White House...</p>';
                                                 setTimeout(function () {
                                                     document.body.innerHTML += '<p>Unfortunately, you were caught by the guards and got killed.</p>';
                                                 }, 3000); // 3 seconds
@@ -4521,7 +4521,7 @@ window.onload = function () {
                             simpleButton.addEventListener('click', function () {
                                 // Perform some action when the button is clicked
                                 document.body.innerHTML = '';
-                                document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                 document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                 var choices = ['grocery store', 'drug store', 'the white house'];
@@ -4531,7 +4531,7 @@ window.onload = function () {
                                     // choice of where to go
                                     button.addEventListener('click', function () {
                                         document.body.innerHTML = ''; // Clear the screen
-                                        document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                        document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                         // choice of what to take
                                         if (choice === 'grocery store') {
                                             document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -4541,7 +4541,7 @@ window.onload = function () {
                                                 groceryButton.innerHTML = groceryChoice;
                                                 groceryButton.addEventListener('click', function () {
                                                     inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                     // Ask if the player wants to take anything else in the grocery store
@@ -4556,7 +4556,7 @@ window.onload = function () {
                                                             additionalButton.innerHTML = additionalChoice;
                                                             additionalButton.addEventListener('click', function () {
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                             });
@@ -4583,7 +4583,7 @@ window.onload = function () {
                                                 drugButton.innerHTML = drugChoice;
                                                 drugButton.addEventListener('click', function () {
                                                     inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                    document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     // Ask if the player wants to take anything else in the drug store
                                                     var takeAnythingElseButton = document.createElement('button');
@@ -4597,7 +4597,7 @@ window.onload = function () {
                                                             additionalButton.innerHTML = additionalChoice;
                                                             additionalButton.addEventListener('click', function () {
                                                                 inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                 document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                             });
@@ -4622,7 +4622,7 @@ window.onload = function () {
                                                 simpleButton.addEventListener('click', function () {
                                                     // Perform some action when the button is clicked
                                                     document.body.innerHTML = '';
-                                                    document.body.innerHTML += '<p>You chose to leave the store.</p>';
+                                                    document.body.innerHTML += '<p style="color: grey;">You chose to leave the store.</p>';
                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                     document.body.innerHTML += '<h1>Where will you run now?</h1>';
                                                     var choices = ['grocery store', 'drug store', 'the white house'];
@@ -4632,7 +4632,7 @@ window.onload = function () {
                                                         // choice of where to go
                                                         button.addEventListener('click', function () {
                                                             document.body.innerHTML = ''; // Clear the screen
-                                                            document.body.innerHTML += '<p>You chose to run to: ' + choice + '</p>';
+                                                            document.body.innerHTML += '<p style="color: grey;">You chose to run to: ' + choice + '</p>';
                                                             // choice of what to take
                                                             if (choice === 'grocery store') {
                                                                 document.body.innerHTML += '<h2>What will you take?</h2>';
@@ -4642,7 +4642,7 @@ window.onload = function () {
                                                                     groceryButton.innerHTML = groceryChoice;
                                                                     groceryButton.addEventListener('click', function () {
                                                                         inventory.push(groceryChoice); // Add the chosen item to the inventory
-                                                                        document.body.innerHTML += '<p>You chose to take: ' + groceryChoice + '</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + groceryChoice + '</p>';
                                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                         document.body.scrollTop = document.body.scrollHeight; // Scroll to the bottom of the screen
                                                                         // Ask if the player wants to take anything else in the grocery store
@@ -4657,7 +4657,7 @@ window.onload = function () {
                                                                                 additionalButton.innerHTML = additionalChoice;
                                                                                 additionalButton.addEventListener('click', function () {
                                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                                                 });
@@ -4684,7 +4684,7 @@ window.onload = function () {
                                                                     drugButton.innerHTML = drugChoice;
                                                                     drugButton.addEventListener('click', function () {
                                                                         inventory.push(drugChoice); // Add the chosen item to the inventory
-                                                                        document.body.innerHTML += '<p>You chose to take: ' + drugChoice + '</p>';
+                                                                        document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + drugChoice + '</p>';
                                                                         document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
                                                                         // Ask if the player wants to take anything else in the drug store
                                                                         var takeAnythingElseButton = document.createElement('button');
@@ -4698,7 +4698,7 @@ window.onload = function () {
                                                                                 additionalButton.innerHTML = additionalChoice;
                                                                                 additionalButton.addEventListener('click', function () {
                                                                                     inventory.push(additionalChoice); // Add the chosen item to the inventory
-                                                                                    document.body.innerHTML += '<p>You chose to take: ' + additionalChoice + '</p>';
+                                                                                    document.body.innerHTML += '<p style="color: grey;">You chose to take: ' + additionalChoice + '</p>';
                                                                                     document.body.innerHTML += '<p>Inventory: ' + inventory.join(', ') + '</p>'; // Display the inventory
 
                                                                                 });
@@ -4719,7 +4719,7 @@ window.onload = function () {
 
                                                             }//
                                                             if (choice === 'the white house') {
-                                                                document.body.innerHTML += '<p>You chose to go to the White House...</p>';
+                                                                document.body.innerHTML += '<p style="color: grey;">You chose to go to the White House...</p>';
                                                                 setTimeout(function () {
                                                                     document.body.innerHTML += '<p>Unfortunately, you were caught by the guards and got killed.</p>';
                                                                 }, 3000); // 3 seconds
@@ -4738,7 +4738,7 @@ window.onload = function () {
 
                                         }//
                                         if (choice === 'the white house') {
-                                            document.body.innerHTML += '<p>You chose to go to the White House...</p>';
+                                            document.body.innerHTML += '<p style="color: grey;">You chose to go to the White House...</p>';
                                             setTimeout(function () {
                                                 document.body.innerHTML += '<p>Unfortunately, you were caught by the guards and got killed.</p>';
                                             }, 3000); // 3 seconds
